@@ -1,0 +1,5 @@
+Create .bin
+/home/jens/Documents/Toolchains/gcc-arm-none-eabi-4_9-2015q3/arm-none-eabi/bin/objcopy -O binary ${ProjName}.elf ${ProjName}.bin
+
+Create .disasm
+/home/jens/Documents/Toolchains/gcc-arm-none-eabi-4_9-2015q3/arm-none-eabi/bin/objdump -d -f -M reg-names-std --demangle ${ProjName}.elf >${ProjName}.disasm
