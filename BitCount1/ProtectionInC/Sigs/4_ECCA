@@ -1,0 +1,9 @@
+// Sigs for ECCA
+static const char BID0 = 3;
+static const char Next0 = 55;
+static const char BID1 = 5;
+static const char Next1 = 7;
+static const char BID2 = 7;
+static const char Next2 = 55;
+static const char BID3 = 11;
+static const char Next3 = 0;

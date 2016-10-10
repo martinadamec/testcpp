@@ -1,0 +1,5 @@
+// Sigs for SIED
+static const char IDB0 = 0;
+static const char IDB1 = 1;
+static const char IDB2 = 2;
+static const char IDB3 = 3;

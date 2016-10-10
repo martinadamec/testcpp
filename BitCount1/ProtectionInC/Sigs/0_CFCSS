@@ -1,0 +1,13 @@
+// Sigs for CFCSS
+static const char s0 = 0x1;
+static const char d0 = 0;
+static const char UpD0 = 0;
+static const char s1 = 0x2;
+static const char d1 = 0x3;
+static const char UpD1 = 0;
+static const char s2 = 0x4;
+static const char d2 = 0x6;
+static const char UpD2 = 0x5;
+static const char s3 = 0x8;
+static const char d3 = 0x9;
+static const char UpD3 : 0;

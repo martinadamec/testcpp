@@ -1,0 +1,5 @@
+// Sigs for SEDSR
+static const char s0 = 0xa;
+static const char s1 = 0x4;
+static const char s2 = 0xa;
+static const char s3 = 0;

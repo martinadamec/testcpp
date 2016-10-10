@@ -1,0 +1,2136 @@
+
+bitCount.elf:     file format elf32-littlearm
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x000000cd
+
+
+Disassembly of section .text:
+
+00000000 <__isr_vector>:
+       0:	10008000 	.word	0x10008000
+       4:	000000cd 	.word	0x000000cd
+       8:	000000fd 	.word	0x000000fd
+       c:	00000241 	.word	0x00000241
+      10:	00000101 	.word	0x00000101
+      14:	00000103 	.word	0x00000103
+      18:	00000105 	.word	0x00000105
+	...
+      2c:	00000107 	.word	0x00000107
+      30:	00000109 	.word	0x00000109
+      34:	00000000 	.word	0x00000000
+      38:	0000010b 	.word	0x0000010b
+      3c:	0000010d 	.word	0x0000010d
+      40:	0000010f 	.word	0x0000010f
+      44:	0000010f 	.word	0x0000010f
+      48:	0000010f 	.word	0x0000010f
+      4c:	0000010f 	.word	0x0000010f
+      50:	0000010f 	.word	0x0000010f
+      54:	0000010f 	.word	0x0000010f
+      58:	0000010f 	.word	0x0000010f
+      5c:	0000010f 	.word	0x0000010f
+      60:	0000010f 	.word	0x0000010f
+      64:	0000010f 	.word	0x0000010f
+      68:	0000010f 	.word	0x0000010f
+      6c:	0000010f 	.word	0x0000010f
+      70:	0000010f 	.word	0x0000010f
+      74:	0000010f 	.word	0x0000010f
+      78:	0000010f 	.word	0x0000010f
+      7c:	0000010f 	.word	0x0000010f
+      80:	0000010f 	.word	0x0000010f
+      84:	0000010f 	.word	0x0000010f
+      88:	0000010f 	.word	0x0000010f
+      8c:	0000010f 	.word	0x0000010f
+      90:	0000010f 	.word	0x0000010f
+      94:	0000010f 	.word	0x0000010f
+      98:	0000010f 	.word	0x0000010f
+      9c:	0000010f 	.word	0x0000010f
+      a0:	0000010f 	.word	0x0000010f
+      a4:	0000010f 	.word	0x0000010f
+      a8:	0000010f 	.word	0x0000010f
+      ac:	0000010f 	.word	0x0000010f
+      b0:	0000010f 	.word	0x0000010f
+      b4:	0000010f 	.word	0x0000010f
+      b8:	0000010f 	.word	0x0000010f
+      bc:	0000010f 	.word	0x0000010f
+      c0:	0000010f 	.word	0x0000010f
+      c4:	0000010f 	.word	0x0000010f
+      c8:	0000010f 	.word	0x0000010f
+
+000000cc <Reset_Handler>:
+      cc:	4906      	ldr	r1, [pc, #24]	; (e8 <Reset_Handler+0x1c>)
+      ce:	4a07      	ldr	r2, [pc, #28]	; (ec <Reset_Handler+0x20>)
+      d0:	4b07      	ldr	r3, [pc, #28]	; (f0 <Reset_Handler+0x24>)
+      d2:	429a      	cmp	r2, r3
+      d4:	bfbe      	ittt	lt
+      d6:	f851 0b04 	ldrlt.w	r0, [r1], #4
+      da:	f842 0b04 	strlt.w	r0, [r2], #4
+      de:	e7f8      	blt.n	d2 <Reset_Handler+0x6>
+      e0:	4804      	ldr	r0, [pc, #16]	; (f4 <Reset_Handler+0x28>)
+      e2:	4780      	blx	r0
+      e4:	4804      	ldr	r0, [pc, #16]	; (f8 <Reset_Handler+0x2c>)
+      e6:	4700      	bx	r0
+      e8:	000014bc 	.word	0x000014bc
+      ec:	100000c8 	.word	0x100000c8
+      f0:	100004f4 	.word	0x100004f4
+      f4:	00000111 	.word	0x00000111
+      f8:	00000279 	.word	0x00000279
+
+000000fc <NMI_Handler>:
+      fc:	e7fe      	b.n	fc <NMI_Handler>
+      fe:	e7fe      	b.n	fe <NMI_Handler+0x2>
+
+00000100 <MemManage_Handler>:
+     100:	e7fe      	b.n	100 <MemManage_Handler>
+
+00000102 <BusFault_Handler>:
+     102:	e7fe      	b.n	102 <BusFault_Handler>
+
+00000104 <UsageFault_Handler>:
+     104:	e7fe      	b.n	104 <UsageFault_Handler>
+
+00000106 <SVC_Handler>:
+     106:	e7fe      	b.n	106 <SVC_Handler>
+
+00000108 <DebugMon_Handler>:
+     108:	e7fe      	b.n	108 <DebugMon_Handler>
+
+0000010a <PendSV_Handler>:
+     10a:	e7fe      	b.n	10a <PendSV_Handler>
+
+0000010c <SysTick_Handler>:
+     10c:	e7fe      	b.n	10c <SysTick_Handler>
+
+0000010e <ADC_IRQHandler>:
+     10e:	e7fe      	b.n	10e <ADC_IRQHandler>
+
+00000110 <SystemInit>:
+     110:	4a2b      	ldr	r2, [pc, #172]	; (1c0 <SystemInit+0xb0>)
+     112:	2320      	movs	r3, #32
+     114:	b4f0      	push	{r4, r5, r6, r7}
+     116:	f8c2 31a0 	str.w	r3, [r2, #416]	; 0x1a0
+     11a:	f8d2 31a0 	ldr.w	r3, [r2, #416]	; 0x1a0
+     11e:	0698      	lsls	r0, r3, #26
+     120:	d445      	bmi.n	1ae <SystemInit+0x9e>
+     122:	4b27      	ldr	r3, [pc, #156]	; (1c0 <SystemInit+0xb0>)
+     124:	2500      	movs	r5, #0
+     126:	4619      	mov	r1, r3
+     128:	2401      	movs	r4, #1
+     12a:	20aa      	movs	r0, #170	; 0xaa
+     12c:	2255      	movs	r2, #85	; 0x55
+     12e:	2702      	movs	r7, #2
+     130:	260b      	movs	r6, #11
+     132:	f8c3 7104 	str.w	r7, [r3, #260]	; 0x104
+     136:	f8c3 51a8 	str.w	r5, [r3, #424]	; 0x1a8
+     13a:	f8c3 51ac 	str.w	r5, [r3, #428]	; 0x1ac
+     13e:	f8c3 410c 	str.w	r4, [r3, #268]	; 0x10c
+     142:	f8c3 6084 	str.w	r6, [r3, #132]	; 0x84
+     146:	f8c3 008c 	str.w	r0, [r3, #140]	; 0x8c
+     14a:	f8c3 208c 	str.w	r2, [r3, #140]	; 0x8c
+     14e:	f8c3 4080 	str.w	r4, [r3, #128]	; 0x80
+     152:	f8c3 008c 	str.w	r0, [r3, #140]	; 0x8c
+     156:	f8c3 208c 	str.w	r2, [r3, #140]	; 0x8c
+     15a:	f8d1 3088 	ldr.w	r3, [r1, #136]	; 0x88
+     15e:	4a18      	ldr	r2, [pc, #96]	; (1c0 <SystemInit+0xb0>)
+     160:	015b      	lsls	r3, r3, #5
+     162:	d5fa      	bpl.n	15a <SystemInit+0x4a>
+     164:	4611      	mov	r1, r2
+     166:	2403      	movs	r4, #3
+     168:	20aa      	movs	r0, #170	; 0xaa
+     16a:	2355      	movs	r3, #85	; 0x55
+     16c:	f8c2 4080 	str.w	r4, [r2, #128]	; 0x80
+     170:	f8c2 008c 	str.w	r0, [r2, #140]	; 0x8c
+     174:	f8c2 308c 	str.w	r3, [r2, #140]	; 0x8c
+     178:	f8d1 3088 	ldr.w	r3, [r1, #136]	; 0x88
+     17c:	4a10      	ldr	r2, [pc, #64]	; (1c0 <SystemInit+0xb0>)
+     17e:	f013 7f40 	tst.w	r3, #50331648	; 0x3000000
+     182:	d0f9      	beq.n	178 <SystemInit+0x68>
+     184:	490f      	ldr	r1, [pc, #60]	; (1c4 <SystemInit+0xb4>)
+     186:	2300      	movs	r3, #0
+     188:	2005      	movs	r0, #5
+     18a:	f8c2 0108 	str.w	r0, [r2, #264]	; 0x108
+     18e:	f8c2 10c4 	str.w	r1, [r2, #196]	; 0xc4
+     192:	f8c2 31c8 	str.w	r3, [r2, #456]	; 0x1c8
+     196:	6813      	ldr	r3, [r2, #0]
+     198:	bcf0      	pop	{r4, r5, r6, r7}
+     19a:	f423 4370 	bic.w	r3, r3, #61440	; 0xf000
+     19e:	f023 033a 	bic.w	r3, r3, #58	; 0x3a
+     1a2:	f443 5340 	orr.w	r3, r3, #12288	; 0x3000
+     1a6:	f043 033a 	orr.w	r3, r3, #58	; 0x3a
+     1aa:	6013      	str	r3, [r2, #0]
+     1ac:	4770      	bx	lr
+     1ae:	f8d2 31a0 	ldr.w	r3, [r2, #416]	; 0x1a0
+     1b2:	0659      	lsls	r1, r3, #25
+     1b4:	d4b5      	bmi.n	122 <SystemInit+0x12>
+     1b6:	f8d2 31a0 	ldr.w	r3, [r2, #416]	; 0x1a0
+     1ba:	0659      	lsls	r1, r3, #25
+     1bc:	d5f7      	bpl.n	1ae <SystemInit+0x9e>
+     1be:	e7b0      	b.n	122 <SystemInit+0x12>
+     1c0:	400fc000 	.word	0x400fc000
+     1c4:	042887de 	.word	0x042887de
+
+000001c8 <Sigerror()>:
+     1c8:	4b05      	ldr	r3, [pc, #20]	; (1e0 <Sigerror()+0x18>)
+     1ca:	f44f 0134 	mov.w	r1, #11796480	; 0xb40000
+     1ce:	681a      	ldr	r2, [r3, #0]
+     1d0:	430a      	orrs	r2, r1
+     1d2:	601a      	str	r2, [r3, #0]
+     1d4:	61d9      	str	r1, [r3, #28]
+     1d6:	699a      	ldr	r2, [r3, #24]
+     1d8:	f442 12a0 	orr.w	r2, r2, #1310720	; 0x140000
+     1dc:	619a      	str	r2, [r3, #24]
+     1de:	e7fe      	b.n	1de <Sigerror()+0x16>
+     1e0:	2009c020 	.word	0x2009c020
+
+000001e4 <bit_count(long)>:
+     1e4:	b510      	push	{r4, lr}
+     1e6:	2300      	movs	r3, #0
+     1e8:	b082      	sub	sp, #8
+     1ea:	f88d 3007 	strb.w	r3, [sp, #7]
+     1ee:	f89d 2007 	ldrb.w	r2, [sp, #7]
+     1f2:	f002 03ff 	and.w	r3, r2, #255	; 0xff
+     1f6:	b9b2      	cbnz	r2, 226 <bit_count(long)+0x42>
+     1f8:	b1b8      	cbz	r0, 22a <bit_count(long)+0x46>
+     1fa:	2101      	movs	r1, #1
+     1fc:	2402      	movs	r4, #2
+     1fe:	f88d 1007 	strb.w	r1, [sp, #7]
+     202:	f89d 2007 	ldrb.w	r2, [sp, #7]
+     206:	2a01      	cmp	r2, #1
+     208:	d10d      	bne.n	226 <bit_count(long)+0x42>
+     20a:	f88d 4007 	strb.w	r4, [sp, #7]
+     20e:	f89d 2007 	ldrb.w	r2, [sp, #7]
+     212:	3301      	adds	r3, #1
+     214:	2a02      	cmp	r2, #2
+     216:	d1f2      	bne.n	1fe <bit_count(long)+0x1a>
+     218:	1e42      	subs	r2, r0, #1
+     21a:	4010      	ands	r0, r2
+     21c:	d1ef      	bne.n	1fe <bit_count(long)+0x1a>
+     21e:	f89d 2007 	ldrb.w	r2, [sp, #7]
+     222:	2a02      	cmp	r2, #2
+     224:	d002      	beq.n	22c <bit_count(long)+0x48>
+     226:	f7ff ffcf 	bl	1c8 <Sigerror()>
+     22a:	4603      	mov	r3, r0
+     22c:	2203      	movs	r2, #3
+     22e:	f88d 2007 	strb.w	r2, [sp, #7]
+     232:	f89d 2007 	ldrb.w	r2, [sp, #7]
+     236:	2a03      	cmp	r2, #3
+     238:	d1f5      	bne.n	226 <bit_count(long)+0x42>
+     23a:	4618      	mov	r0, r3
+     23c:	b002      	add	sp, #8
+     23e:	bd10      	pop	{r4, pc}
+
+00000240 <HardFault_Handler>:
+     240:	4b04      	ldr	r3, [pc, #16]	; (254 <HardFault_Handler+0x14>)
+     242:	681a      	ldr	r2, [r3, #0]
+     244:	f442 1200 	orr.w	r2, r2, #2097152	; 0x200000
+     248:	601a      	str	r2, [r3, #0]
+     24a:	699a      	ldr	r2, [r3, #24]
+     24c:	f442 1200 	orr.w	r2, r2, #2097152	; 0x200000
+     250:	619a      	str	r2, [r3, #24]
+     252:	e7fe      	b.n	252 <HardFault_Handler+0x12>
+     254:	2009c020 	.word	0x2009c020
+
+00000258 <toggleLed4()>:
+     258:	4b06      	ldr	r3, [pc, #24]	; (274 <toggleLed4()+0x1c>)
+     25a:	695a      	ldr	r2, [r3, #20]
+     25c:	0212      	lsls	r2, r2, #8
+     25e:	d504      	bpl.n	26a <toggleLed4()+0x12>
+     260:	69da      	ldr	r2, [r3, #28]
+     262:	f442 0200 	orr.w	r2, r2, #8388608	; 0x800000
+     266:	61da      	str	r2, [r3, #28]
+     268:	4770      	bx	lr
+     26a:	699a      	ldr	r2, [r3, #24]
+     26c:	f442 0200 	orr.w	r2, r2, #8388608	; 0x800000
+     270:	619a      	str	r2, [r3, #24]
+     272:	4770      	bx	lr
+     274:	2009c020 	.word	0x2009c020
+
+00000278 <main>:
+     278:	b508      	push	{r3, lr}
+     27a:	4a06      	ldr	r2, [pc, #24]	; (294 <main+0x1c>)
+     27c:	6813      	ldr	r3, [r2, #0]
+     27e:	f443 0300 	orr.w	r3, r3, #8388608	; 0x800000
+     282:	6013      	str	r3, [r2, #0]
+     284:	f7ff ffe8 	bl	258 <toggleLed4()>
+     288:	4803      	ldr	r0, [pc, #12]	; (298 <main+0x20>)
+     28a:	f7ff ffab 	bl	1e4 <bit_count(long)>
+     28e:	2807      	cmp	r0, #7
+     290:	d0f8      	beq.n	284 <main+0xc>
+     292:	e7fe      	b.n	292 <main+0x1a>
+     294:	2009c020 	.word	0x2009c020
+     298:	00112a88 	.word	0x00112a88
+
+0000029c <selfrel_offset31>:
+     29c:	6803      	ldr	r3, [r0, #0]
+     29e:	005a      	lsls	r2, r3, #1
+     2a0:	bf4c      	ite	mi
+     2a2:	f043 4300 	orrmi.w	r3, r3, #2147483648	; 0x80000000
+     2a6:	f023 4300 	bicpl.w	r3, r3, #2147483648	; 0x80000000
+     2aa:	4418      	add	r0, r3
+     2ac:	4770      	bx	lr
+     2ae:	bf00      	nop
+
+000002b0 <search_EIT_table>:
+     2b0:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+     2b4:	b083      	sub	sp, #12
+     2b6:	b399      	cbz	r1, 320 <search_EIT_table+0x70>
+     2b8:	1e4b      	subs	r3, r1, #1
+     2ba:	4617      	mov	r7, r2
+     2bc:	4605      	mov	r5, r0
+     2be:	4698      	mov	r8, r3
+     2c0:	9301      	str	r3, [sp, #4]
+     2c2:	2600      	movs	r6, #0
+     2c4:	eb06 0408 	add.w	r4, r6, r8
+     2c8:	eb04 74d4 	add.w	r4, r4, r4, lsr #31
+     2cc:	1064      	asrs	r4, r4, #1
+     2ce:	ea4f 0ac4 	mov.w	r10, r4, lsl #3
+     2d2:	eb05 0b0a 	add.w	r11, r5, r10
+     2d6:	4658      	mov	r0, r11
+     2d8:	f7ff ffe0 	bl	29c <selfrel_offset31>
+     2dc:	9b01      	ldr	r3, [sp, #4]
+     2de:	4681      	mov	r9, r0
+     2e0:	42a3      	cmp	r3, r4
+     2e2:	f10a 0008 	add.w	r0, r10, #8
+     2e6:	4428      	add	r0, r5
+     2e8:	d00e      	beq.n	308 <search_EIT_table+0x58>
+     2ea:	f7ff ffd7 	bl	29c <selfrel_offset31>
+     2ee:	45b9      	cmp	r9, r7
+     2f0:	f100 30ff 	add.w	r0, r0, #4294967295
+     2f4:	d904      	bls.n	300 <search_EIT_table+0x50>
+     2f6:	42b4      	cmp	r4, r6
+     2f8:	d00c      	beq.n	314 <search_EIT_table+0x64>
+     2fa:	f104 38ff 	add.w	r8, r4, #4294967295
+     2fe:	e7e1      	b.n	2c4 <search_EIT_table+0x14>
+     300:	42b8      	cmp	r0, r7
+     302:	d203      	bcs.n	30c <search_EIT_table+0x5c>
+     304:	1c66      	adds	r6, r4, #1
+     306:	e7dd      	b.n	2c4 <search_EIT_table+0x14>
+     308:	45b9      	cmp	r9, r7
+     30a:	d8f4      	bhi.n	2f6 <search_EIT_table+0x46>
+     30c:	4658      	mov	r0, r11
+     30e:	b003      	add	sp, #12
+     310:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+     314:	f04f 0b00 	mov.w	r11, #0
+     318:	4658      	mov	r0, r11
+     31a:	b003      	add	sp, #12
+     31c:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+     320:	468b      	mov	r11, r1
+     322:	4658      	mov	r0, r11
+     324:	b003      	add	sp, #12
+     326:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+     32a:	bf00      	nop
+
+0000032c <__gnu_unwind_get_pr_addr>:
+     32c:	2801      	cmp	r0, #1
+     32e:	d007      	beq.n	340 <__gnu_unwind_get_pr_addr+0x14>
+     330:	2802      	cmp	r0, #2
+     332:	d007      	beq.n	344 <__gnu_unwind_get_pr_addr+0x18>
+     334:	4b04      	ldr	r3, [pc, #16]	; (348 <__gnu_unwind_get_pr_addr+0x1c>)
+     336:	2800      	cmp	r0, #0
+     338:	bf0c      	ite	eq
+     33a:	4618      	moveq	r0, r3
+     33c:	2000      	movne	r0, #0
+     33e:	4770      	bx	lr
+     340:	4802      	ldr	r0, [pc, #8]	; (34c <__gnu_unwind_get_pr_addr+0x20>)
+     342:	4770      	bx	lr
+     344:	4802      	ldr	r0, [pc, #8]	; (350 <__gnu_unwind_get_pr_addr+0x24>)
+     346:	4770      	bx	lr
+     348:	00000a41 	.word	0x00000a41
+     34c:	00000a45 	.word	0x00000a45
+     350:	00000a49 	.word	0x00000a49
+
+00000354 <get_eit_entry>:
+     354:	b530      	push	{r4, r5, lr}
+     356:	4b25      	ldr	r3, [pc, #148]	; (3ec <get_eit_entry+0x98>)
+     358:	b083      	sub	sp, #12
+     35a:	4604      	mov	r4, r0
+     35c:	1e8d      	subs	r5, r1, #2
+     35e:	b37b      	cbz	r3, 3c0 <get_eit_entry+0x6c>
+     360:	4628      	mov	r0, r5
+     362:	a901      	add	r1, sp, #4
+     364:	f3af 8000 	nop.w
+     368:	b320      	cbz	r0, 3b4 <get_eit_entry+0x60>
+     36a:	9901      	ldr	r1, [sp, #4]
+     36c:	462a      	mov	r2, r5
+     36e:	f7ff ff9f 	bl	2b0 <search_EIT_table>
+     372:	4605      	mov	r5, r0
+     374:	b1f0      	cbz	r0, 3b4 <get_eit_entry+0x60>
+     376:	f7ff ff91 	bl	29c <selfrel_offset31>
+     37a:	686b      	ldr	r3, [r5, #4]
+     37c:	64a0      	str	r0, [r4, #72]	; 0x48
+     37e:	2b01      	cmp	r3, #1
+     380:	d012      	beq.n	3a8 <get_eit_entry+0x54>
+     382:	2b00      	cmp	r3, #0
+     384:	f105 0004 	add.w	r0, r5, #4
+     388:	db21      	blt.n	3ce <get_eit_entry+0x7a>
+     38a:	f7ff ff87 	bl	29c <selfrel_offset31>
+     38e:	2300      	movs	r3, #0
+     390:	64e0      	str	r0, [r4, #76]	; 0x4c
+     392:	6523      	str	r3, [r4, #80]	; 0x50
+     394:	6803      	ldr	r3, [r0, #0]
+     396:	2b00      	cmp	r3, #0
+     398:	db1d      	blt.n	3d6 <get_eit_entry+0x82>
+     39a:	f7ff ff7f 	bl	29c <selfrel_offset31>
+     39e:	2300      	movs	r3, #0
+     3a0:	6120      	str	r0, [r4, #16]
+     3a2:	4618      	mov	r0, r3
+     3a4:	b003      	add	sp, #12
+     3a6:	bd30      	pop	{r4, r5, pc}
+     3a8:	2300      	movs	r3, #0
+     3aa:	6123      	str	r3, [r4, #16]
+     3ac:	2305      	movs	r3, #5
+     3ae:	4618      	mov	r0, r3
+     3b0:	b003      	add	sp, #12
+     3b2:	bd30      	pop	{r4, r5, pc}
+     3b4:	2300      	movs	r3, #0
+     3b6:	6123      	str	r3, [r4, #16]
+     3b8:	2309      	movs	r3, #9
+     3ba:	4618      	mov	r0, r3
+     3bc:	b003      	add	sp, #12
+     3be:	bd30      	pop	{r4, r5, pc}
+     3c0:	490b      	ldr	r1, [pc, #44]	; (3f0 <get_eit_entry+0x9c>)
+     3c2:	4b0c      	ldr	r3, [pc, #48]	; (3f4 <get_eit_entry+0xa0>)
+     3c4:	4608      	mov	r0, r1
+     3c6:	1a59      	subs	r1, r3, r1
+     3c8:	10c9      	asrs	r1, r1, #3
+     3ca:	9101      	str	r1, [sp, #4]
+     3cc:	e7ce      	b.n	36c <get_eit_entry+0x18>
+     3ce:	2301      	movs	r3, #1
+     3d0:	64e0      	str	r0, [r4, #76]	; 0x4c
+     3d2:	6523      	str	r3, [r4, #80]	; 0x50
+     3d4:	e7de      	b.n	394 <get_eit_entry+0x40>
+     3d6:	f3c3 6003 	ubfx	r0, r3, #24, #4
+     3da:	f7ff ffa7 	bl	32c <__gnu_unwind_get_pr_addr>
+     3de:	2800      	cmp	r0, #0
+     3e0:	6120      	str	r0, [r4, #16]
+     3e2:	bf0c      	ite	eq
+     3e4:	2309      	moveq	r3, #9
+     3e6:	2300      	movne	r3, #0
+     3e8:	e7db      	b.n	3a2 <get_eit_entry+0x4e>
+     3ea:	bf00      	nop
+     3ec:	00000000 	.word	0x00000000
+     3f0:	000013f4 	.word	0x000013f4
+     3f4:	000014bc 	.word	0x000014bc
+
+000003f8 <restore_non_core_regs>:
+     3f8:	6803      	ldr	r3, [r0, #0]
+     3fa:	b510      	push	{r4, lr}
+     3fc:	07da      	lsls	r2, r3, #31
+     3fe:	4604      	mov	r4, r0
+     400:	d406      	bmi.n	410 <restore_non_core_regs+0x18>
+     402:	079b      	lsls	r3, r3, #30
+     404:	f100 0048 	add.w	r0, r0, #72	; 0x48
+     408:	d509      	bpl.n	41e <restore_non_core_regs+0x26>
+     40a:	f000 fc85 	bl	d18 <__gnu_Unwind_Restore_VFP_D>
+     40e:	6823      	ldr	r3, [r4, #0]
+     410:	0759      	lsls	r1, r3, #29
+     412:	d509      	bpl.n	428 <restore_non_core_regs+0x30>
+     414:	071a      	lsls	r2, r3, #28
+     416:	d50e      	bpl.n	436 <restore_non_core_regs+0x3e>
+     418:	06db      	lsls	r3, r3, #27
+     41a:	d513      	bpl.n	444 <restore_non_core_regs+0x4c>
+     41c:	bd10      	pop	{r4, pc}
+     41e:	f000 fc73 	bl	d08 <__gnu_Unwind_Restore_VFP>
+     422:	6823      	ldr	r3, [r4, #0]
+     424:	0759      	lsls	r1, r3, #29
+     426:	d4f5      	bmi.n	414 <restore_non_core_regs+0x1c>
+     428:	f104 00d0 	add.w	r0, r4, #208	; 0xd0
+     42c:	f000 fc7c 	bl	d28 <__gnu_Unwind_Restore_VFP_D_16_to_31>
+     430:	6823      	ldr	r3, [r4, #0]
+     432:	071a      	lsls	r2, r3, #28
+     434:	d4f0      	bmi.n	418 <restore_non_core_regs+0x20>
+     436:	f504 70a8 	add.w	r0, r4, #336	; 0x150
+     43a:	f000 fc7d 	bl	d38 <__gnu_Unwind_Restore_WMMXD>
+     43e:	6823      	ldr	r3, [r4, #0]
+     440:	06db      	lsls	r3, r3, #27
+     442:	d4eb      	bmi.n	41c <restore_non_core_regs+0x24>
+     444:	f504 70e8 	add.w	r0, r4, #464	; 0x1d0
+     448:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+     44c:	f000 bcb8 	b.w	dc0 <__gnu_Unwind_Restore_WMMXC>
+
+00000450 <_Unwind_decode_typeinfo_ptr.isra.0>:
+     450:	6803      	ldr	r3, [r0, #0]
+     452:	b10b      	cbz	r3, 458 <_Unwind_decode_typeinfo_ptr.isra.0+0x8>
+     454:	4418      	add	r0, r3
+     456:	4770      	bx	lr
+     458:	4618      	mov	r0, r3
+     45a:	4770      	bx	lr
+
+0000045c <__gnu_unwind_24bit.isra.1>:
+     45c:	2009      	movs	r0, #9
+     45e:	4770      	bx	lr
+
+00000460 <_Unwind_DebugHook>:
+     460:	4770      	bx	lr
+     462:	bf00      	nop
+
+00000464 <unwind_phase2>:
+     464:	b570      	push	{r4, r5, r6, lr}
+     466:	4604      	mov	r4, r0
+     468:	460d      	mov	r5, r1
+     46a:	e008      	b.n	47e <unwind_phase2+0x1a>
+     46c:	6c2a      	ldr	r2, [r5, #64]	; 0x40
+     46e:	6923      	ldr	r3, [r4, #16]
+     470:	6162      	str	r2, [r4, #20]
+     472:	2001      	movs	r0, #1
+     474:	4621      	mov	r1, r4
+     476:	462a      	mov	r2, r5
+     478:	4798      	blx	r3
+     47a:	2808      	cmp	r0, #8
+     47c:	d108      	bne.n	490 <unwind_phase2+0x2c>
+     47e:	4620      	mov	r0, r4
+     480:	6c29      	ldr	r1, [r5, #64]	; 0x40
+     482:	f7ff ff67 	bl	354 <get_eit_entry>
+     486:	4606      	mov	r6, r0
+     488:	2800      	cmp	r0, #0
+     48a:	d0ef      	beq.n	46c <unwind_phase2+0x8>
+     48c:	f000 fec4 	bl	1218 <abort>
+     490:	2807      	cmp	r0, #7
+     492:	d1fb      	bne.n	48c <unwind_phase2+0x28>
+     494:	4630      	mov	r0, r6
+     496:	6c29      	ldr	r1, [r5, #64]	; 0x40
+     498:	f7ff ffe2 	bl	460 <_Unwind_DebugHook>
+     49c:	1d28      	adds	r0, r5, #4
+     49e:	f000 fc27 	bl	cf0 <__restore_core_regs>
+     4a2:	bf00      	nop
+
+000004a4 <unwind_phase2_forced>:
+     4a4:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+     4a8:	4606      	mov	r6, r0
+     4aa:	f5ad 7d72 	sub.w	sp, sp, #968	; 0x3c8
+     4ae:	ad03      	add	r5, sp, #12
+     4b0:	1d0c      	adds	r4, r1, #4
+     4b2:	4617      	mov	r7, r2
+     4b4:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+     4b6:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+     4b8:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+     4ba:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+     4bc:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+     4be:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+     4c0:	e894 000f 	ldmia.w	r4, {r0, r1, r2, r3}
+     4c4:	ac02      	add	r4, sp, #8
+     4c6:	f04f 0e00 	mov.w	lr, #0
+     4ca:	f8d6 800c 	ldr.w	r8, [r6, #12]
+     4ce:	f8d6 9018 	ldr.w	r9, [r6, #24]
+     4d2:	e885 000f 	stmia.w	r5, {r0, r1, r2, r3}
+     4d6:	4630      	mov	r0, r6
+     4d8:	6c21      	ldr	r1, [r4, #64]	; 0x40
+     4da:	f8c4 e000 	str.w	lr, [r4]
+     4de:	f7ff ff39 	bl	354 <get_eit_entry>
+     4e2:	4605      	mov	r5, r0
+     4e4:	2f00      	cmp	r7, #0
+     4e6:	bf0c      	ite	eq
+     4e8:	2709      	moveq	r7, #9
+     4ea:	270a      	movne	r7, #10
+     4ec:	b17d      	cbz	r5, 50e <unwind_phase2_forced+0x6a>
+     4ee:	6ba3      	ldr	r3, [r4, #56]	; 0x38
+     4f0:	f047 0110 	orr.w	r1, r7, #16
+     4f4:	e88d 0210 	stmia.w	sp, {r4, r9}
+     4f8:	2001      	movs	r0, #1
+     4fa:	6463      	str	r3, [r4, #68]	; 0x44
+     4fc:	4632      	mov	r2, r6
+     4fe:	4633      	mov	r3, r6
+     500:	47c0      	blx	r8
+     502:	bb78      	cbnz	r0, 564 <unwind_phase2_forced+0xc0>
+     504:	4628      	mov	r0, r5
+     506:	f50d 7d72 	add.w	sp, sp, #968	; 0x3c8
+     50a:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+     50e:	6c23      	ldr	r3, [r4, #64]	; 0x40
+     510:	4621      	mov	r1, r4
+     512:	6173      	str	r3, [r6, #20]
+     514:	f44f 72f0 	mov.w	r2, #480	; 0x1e0
+     518:	a87a      	add	r0, sp, #488	; 0x1e8
+     51a:	f000 fe85 	bl	1228 <memcpy>
+     51e:	6933      	ldr	r3, [r6, #16]
+     520:	4631      	mov	r1, r6
+     522:	aa7a      	add	r2, sp, #488	; 0x1e8
+     524:	4638      	mov	r0, r7
+     526:	4798      	blx	r3
+     528:	9b88      	ldr	r3, [sp, #544]	; 0x220
+     52a:	4682      	mov	r10, r0
+     52c:	e88d 0210 	stmia.w	sp, {r4, r9}
+     530:	4639      	mov	r1, r7
+     532:	6463      	str	r3, [r4, #68]	; 0x44
+     534:	2001      	movs	r0, #1
+     536:	4632      	mov	r2, r6
+     538:	4633      	mov	r3, r6
+     53a:	47c0      	blx	r8
+     53c:	b990      	cbnz	r0, 564 <unwind_phase2_forced+0xc0>
+     53e:	4620      	mov	r0, r4
+     540:	a97a      	add	r1, sp, #488	; 0x1e8
+     542:	f44f 72f0 	mov.w	r2, #480	; 0x1e0
+     546:	f000 fe6f 	bl	1228 <memcpy>
+     54a:	f1ba 0f08 	cmp.w	r10, #8
+     54e:	d106      	bne.n	55e <unwind_phase2_forced+0xba>
+     550:	4630      	mov	r0, r6
+     552:	6c21      	ldr	r1, [r4, #64]	; 0x40
+     554:	f7ff fefe 	bl	354 <get_eit_entry>
+     558:	2709      	movs	r7, #9
+     55a:	4605      	mov	r5, r0
+     55c:	e7c6      	b.n	4ec <unwind_phase2_forced+0x48>
+     55e:	f1ba 0f07 	cmp.w	r10, #7
+     562:	d004      	beq.n	56e <unwind_phase2_forced+0xca>
+     564:	2009      	movs	r0, #9
+     566:	f50d 7d72 	add.w	sp, sp, #968	; 0x3c8
+     56a:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+     56e:	4628      	mov	r0, r5
+     570:	6c21      	ldr	r1, [r4, #64]	; 0x40
+     572:	f7ff ff75 	bl	460 <_Unwind_DebugHook>
+     576:	a803      	add	r0, sp, #12
+     578:	f000 fbba 	bl	cf0 <__restore_core_regs>
+
+0000057c <_Unwind_GetCFA>:
+     57c:	6c40      	ldr	r0, [r0, #68]	; 0x44
+     57e:	4770      	bx	lr
+
+00000580 <__gnu_Unwind_RaiseException>:
+     580:	b5f0      	push	{r4, r5, r6, r7, lr}
+     582:	6bcb      	ldr	r3, [r1, #60]	; 0x3c
+     584:	b0f9      	sub	sp, #484	; 0x1e4
+     586:	640b      	str	r3, [r1, #64]	; 0x40
+     588:	1d0e      	adds	r6, r1, #4
+     58a:	ad01      	add	r5, sp, #4
+     58c:	460f      	mov	r7, r1
+     58e:	4604      	mov	r4, r0
+     590:	ce0f      	ldmia	r6!, {r0, r1, r2, r3}
+     592:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+     594:	ce0f      	ldmia	r6!, {r0, r1, r2, r3}
+     596:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+     598:	ce0f      	ldmia	r6!, {r0, r1, r2, r3}
+     59a:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+     59c:	e896 000f 	ldmia.w	r6, {r0, r1, r2, r3}
+     5a0:	f04f 36ff 	mov.w	r6, #4294967295
+     5a4:	e885 000f 	stmia.w	r5, {r0, r1, r2, r3}
+     5a8:	9600      	str	r6, [sp, #0]
+     5aa:	e006      	b.n	5ba <__gnu_Unwind_RaiseException+0x3a>
+     5ac:	6923      	ldr	r3, [r4, #16]
+     5ae:	4621      	mov	r1, r4
+     5b0:	466a      	mov	r2, sp
+     5b2:	4798      	blx	r3
+     5b4:	2808      	cmp	r0, #8
+     5b6:	4605      	mov	r5, r0
+     5b8:	d108      	bne.n	5cc <__gnu_Unwind_RaiseException+0x4c>
+     5ba:	4620      	mov	r0, r4
+     5bc:	9910      	ldr	r1, [sp, #64]	; 0x40
+     5be:	f7ff fec9 	bl	354 <get_eit_entry>
+     5c2:	2800      	cmp	r0, #0
+     5c4:	d0f2      	beq.n	5ac <__gnu_Unwind_RaiseException+0x2c>
+     5c6:	2009      	movs	r0, #9
+     5c8:	b079      	add	sp, #484	; 0x1e4
+     5ca:	bdf0      	pop	{r4, r5, r6, r7, pc}
+     5cc:	4668      	mov	r0, sp
+     5ce:	f7ff ff13 	bl	3f8 <restore_non_core_regs>
+     5d2:	2d06      	cmp	r5, #6
+     5d4:	d1f7      	bne.n	5c6 <__gnu_Unwind_RaiseException+0x46>
+     5d6:	4620      	mov	r0, r4
+     5d8:	4639      	mov	r1, r7
+     5da:	f7ff ff43 	bl	464 <unwind_phase2>
+     5de:	bf00      	nop
+
+000005e0 <__gnu_Unwind_ForcedUnwind>:
+     5e0:	b430      	push	{r4, r5}
+     5e2:	6bdd      	ldr	r5, [r3, #60]	; 0x3c
+     5e4:	60c1      	str	r1, [r0, #12]
+     5e6:	6182      	str	r2, [r0, #24]
+     5e8:	4619      	mov	r1, r3
+     5ea:	641d      	str	r5, [r3, #64]	; 0x40
+     5ec:	2200      	movs	r2, #0
+     5ee:	bc30      	pop	{r4, r5}
+     5f0:	e758      	b.n	4a4 <unwind_phase2_forced>
+     5f2:	bf00      	nop
+
+000005f4 <__gnu_Unwind_Resume>:
+     5f4:	b570      	push	{r4, r5, r6, lr}
+     5f6:	6943      	ldr	r3, [r0, #20]
+     5f8:	68c6      	ldr	r6, [r0, #12]
+     5fa:	4604      	mov	r4, r0
+     5fc:	460d      	mov	r5, r1
+     5fe:	640b      	str	r3, [r1, #64]	; 0x40
+     600:	b126      	cbz	r6, 60c <__gnu_Unwind_Resume+0x18>
+     602:	2201      	movs	r2, #1
+     604:	f7ff ff4e 	bl	4a4 <unwind_phase2_forced>
+     608:	f000 fe06 	bl	1218 <abort>
+     60c:	6903      	ldr	r3, [r0, #16]
+     60e:	4621      	mov	r1, r4
+     610:	2002      	movs	r0, #2
+     612:	462a      	mov	r2, r5
+     614:	4798      	blx	r3
+     616:	2807      	cmp	r0, #7
+     618:	d007      	beq.n	62a <__gnu_Unwind_Resume+0x36>
+     61a:	2808      	cmp	r0, #8
+     61c:	d103      	bne.n	626 <__gnu_Unwind_Resume+0x32>
+     61e:	4620      	mov	r0, r4
+     620:	4629      	mov	r1, r5
+     622:	f7ff ff1f 	bl	464 <unwind_phase2>
+     626:	f000 fdf7 	bl	1218 <abort>
+     62a:	4630      	mov	r0, r6
+     62c:	6c29      	ldr	r1, [r5, #64]	; 0x40
+     62e:	f7ff ff17 	bl	460 <_Unwind_DebugHook>
+     632:	1d28      	adds	r0, r5, #4
+     634:	f000 fb5c 	bl	cf0 <__restore_core_regs>
+
+00000638 <__gnu_Unwind_Resume_or_Rethrow>:
+     638:	68c2      	ldr	r2, [r0, #12]
+     63a:	b132      	cbz	r2, 64a <__gnu_Unwind_Resume_or_Rethrow+0x12>
+     63c:	b410      	push	{r4}
+     63e:	6bcc      	ldr	r4, [r1, #60]	; 0x3c
+     640:	2200      	movs	r2, #0
+     642:	640c      	str	r4, [r1, #64]	; 0x40
+     644:	f85d 4b04 	ldr.w	r4, [sp], #4
+     648:	e72c      	b.n	4a4 <unwind_phase2_forced>
+     64a:	e799      	b.n	580 <__gnu_Unwind_RaiseException>
+
+0000064c <_Unwind_Complete>:
+     64c:	4770      	bx	lr
+     64e:	bf00      	nop
+
+00000650 <_Unwind_DeleteException>:
+     650:	6883      	ldr	r3, [r0, #8]
+     652:	b113      	cbz	r3, 65a <_Unwind_DeleteException+0xa>
+     654:	4601      	mov	r1, r0
+     656:	2001      	movs	r0, #1
+     658:	4718      	bx	r3
+     65a:	4770      	bx	lr
+
+0000065c <_Unwind_VRS_Get>:
+     65c:	b500      	push	{lr}
+     65e:	2904      	cmp	r1, #4
+     660:	d807      	bhi.n	672 <_Unwind_VRS_Get+0x16>
+     662:	e8df f001 	tbb	[pc, r1]
+     666:	0903      	.short	0x0903
+     668:	0906      	.short	0x0906
+     66a:	09          	.byte	0x09
+     66b:	00          	.byte	0x00
+     66c:	b90b      	cbnz	r3, 672 <_Unwind_VRS_Get+0x16>
+     66e:	2a0f      	cmp	r2, #15
+     670:	d905      	bls.n	67e <_Unwind_VRS_Get+0x22>
+     672:	2002      	movs	r0, #2
+     674:	f85d fb04 	ldr.w	pc, [sp], #4
+     678:	2001      	movs	r0, #1
+     67a:	f85d fb04 	ldr.w	pc, [sp], #4
+     67e:	eb00 0282 	add.w	r2, r0, r2, lsl #2
+     682:	6852      	ldr	r2, [r2, #4]
+     684:	4618      	mov	r0, r3
+     686:	9b01      	ldr	r3, [sp, #4]
+     688:	601a      	str	r2, [r3, #0]
+     68a:	f85d fb04 	ldr.w	pc, [sp], #4
+     68e:	bf00      	nop
+
+00000690 <_Unwind_GetGR>:
+     690:	b500      	push	{lr}
+     692:	b085      	sub	sp, #20
+     694:	460a      	mov	r2, r1
+     696:	ab03      	add	r3, sp, #12
+     698:	2100      	movs	r1, #0
+     69a:	9300      	str	r3, [sp, #0]
+     69c:	460b      	mov	r3, r1
+     69e:	f7ff ffdd 	bl	65c <_Unwind_VRS_Get>
+     6a2:	9803      	ldr	r0, [sp, #12]
+     6a4:	b005      	add	sp, #20
+     6a6:	f85d fb04 	ldr.w	pc, [sp], #4
+     6aa:	bf00      	nop
+
+000006ac <_Unwind_VRS_Set>:
+     6ac:	b500      	push	{lr}
+     6ae:	2904      	cmp	r1, #4
+     6b0:	d807      	bhi.n	6c2 <_Unwind_VRS_Set+0x16>
+     6b2:	e8df f001 	tbb	[pc, r1]
+     6b6:	0903      	.short	0x0903
+     6b8:	0906      	.short	0x0906
+     6ba:	09          	.byte	0x09
+     6bb:	00          	.byte	0x00
+     6bc:	b90b      	cbnz	r3, 6c2 <_Unwind_VRS_Set+0x16>
+     6be:	2a0f      	cmp	r2, #15
+     6c0:	d905      	bls.n	6ce <_Unwind_VRS_Set+0x22>
+     6c2:	2002      	movs	r0, #2
+     6c4:	f85d fb04 	ldr.w	pc, [sp], #4
+     6c8:	2001      	movs	r0, #1
+     6ca:	f85d fb04 	ldr.w	pc, [sp], #4
+     6ce:	9901      	ldr	r1, [sp, #4]
+     6d0:	eb00 0282 	add.w	r2, r0, r2, lsl #2
+     6d4:	6809      	ldr	r1, [r1, #0]
+     6d6:	4618      	mov	r0, r3
+     6d8:	6051      	str	r1, [r2, #4]
+     6da:	f85d fb04 	ldr.w	pc, [sp], #4
+     6de:	bf00      	nop
+
+000006e0 <_Unwind_SetGR>:
+     6e0:	b510      	push	{r4, lr}
+     6e2:	460c      	mov	r4, r1
+     6e4:	b084      	sub	sp, #16
+     6e6:	ab04      	add	r3, sp, #16
+     6e8:	f843 2d04 	str.w	r2, [r3, #-4]!
+     6ec:	2100      	movs	r1, #0
+     6ee:	9300      	str	r3, [sp, #0]
+     6f0:	4622      	mov	r2, r4
+     6f2:	460b      	mov	r3, r1
+     6f4:	f7ff ffda 	bl	6ac <_Unwind_VRS_Set>
+     6f8:	b004      	add	sp, #16
+     6fa:	bd10      	pop	{r4, pc}
+
+000006fc <__gnu_Unwind_Backtrace>:
+     6fc:	b5f0      	push	{r4, r5, r6, r7, lr}
+     6fe:	6bd3      	ldr	r3, [r2, #60]	; 0x3c
+     700:	f5ad 7d0f 	sub.w	sp, sp, #572	; 0x23c
+     704:	6413      	str	r3, [r2, #64]	; 0x40
+     706:	1d15      	adds	r5, r2, #4
+     708:	ac17      	add	r4, sp, #92	; 0x5c
+     70a:	4607      	mov	r7, r0
+     70c:	460e      	mov	r6, r1
+     70e:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+     710:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+     712:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+     714:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+     716:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+     718:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+     71a:	e895 000f 	ldmia.w	r5, {r0, r1, r2, r3}
+     71e:	f04f 35ff 	mov.w	r5, #4294967295
+     722:	e884 000f 	stmia.w	r4, {r0, r1, r2, r3}
+     726:	9516      	str	r5, [sp, #88]	; 0x58
+     728:	e011      	b.n	74e <__gnu_Unwind_Backtrace+0x52>
+     72a:	a816      	add	r0, sp, #88	; 0x58
+     72c:	466a      	mov	r2, sp
+     72e:	f7ff ffd7 	bl	6e0 <_Unwind_SetGR>
+     732:	a816      	add	r0, sp, #88	; 0x58
+     734:	4631      	mov	r1, r6
+     736:	47b8      	blx	r7
+     738:	b980      	cbnz	r0, 75c <__gnu_Unwind_Backtrace+0x60>
+     73a:	9b04      	ldr	r3, [sp, #16]
+     73c:	2008      	movs	r0, #8
+     73e:	4669      	mov	r1, sp
+     740:	aa16      	add	r2, sp, #88	; 0x58
+     742:	4798      	blx	r3
+     744:	2805      	cmp	r0, #5
+     746:	4604      	mov	r4, r0
+     748:	d009      	beq.n	75e <__gnu_Unwind_Backtrace+0x62>
+     74a:	2809      	cmp	r0, #9
+     74c:	d006      	beq.n	75c <__gnu_Unwind_Backtrace+0x60>
+     74e:	9926      	ldr	r1, [sp, #152]	; 0x98
+     750:	4668      	mov	r0, sp
+     752:	f7ff fdff 	bl	354 <get_eit_entry>
+     756:	210c      	movs	r1, #12
+     758:	2800      	cmp	r0, #0
+     75a:	d0e6      	beq.n	72a <__gnu_Unwind_Backtrace+0x2e>
+     75c:	2409      	movs	r4, #9
+     75e:	a816      	add	r0, sp, #88	; 0x58
+     760:	f7ff fe4a 	bl	3f8 <restore_non_core_regs>
+     764:	4620      	mov	r0, r4
+     766:	f50d 7d0f 	add.w	sp, sp, #572	; 0x23c
+     76a:	bdf0      	pop	{r4, r5, r6, r7, pc}
+
+0000076c <__gnu_unwind_pr_common>:
+     76c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+     770:	6ccc      	ldr	r4, [r1, #76]	; 0x4c
+     772:	4690      	mov	r8, r2
+     774:	6822      	ldr	r2, [r4, #0]
+     776:	b08b      	sub	sp, #44	; 0x2c
+     778:	3404      	adds	r4, #4
+     77a:	460d      	mov	r5, r1
+     77c:	9207      	str	r2, [sp, #28]
+     77e:	9408      	str	r4, [sp, #32]
+     780:	f000 0903 	and.w	r9, r0, #3
+     784:	461e      	mov	r6, r3
+     786:	2b00      	cmp	r3, #0
+     788:	d164      	bne.n	854 <Heap_Size+0x54>
+     78a:	0212      	lsls	r2, r2, #8
+     78c:	2303      	movs	r3, #3
+     78e:	9207      	str	r2, [sp, #28]
+     790:	f88d 6025 	strb.w	r6, [sp, #37]	; 0x25
+     794:	f88d 3024 	strb.w	r3, [sp, #36]	; 0x24
+     798:	6d2b      	ldr	r3, [r5, #80]	; 0x50
+     79a:	f1b9 0f02 	cmp.w	r9, #2
+     79e:	bf08      	it	eq
+     7a0:	6bac      	ldreq	r4, [r5, #56]	; 0x38
+     7a2:	f013 0301 	ands.w	r3, r3, #1
+     7a6:	d143      	bne.n	830 <Heap_Size+0x30>
+     7a8:	f000 0008 	and.w	r0, r0, #8
+     7ac:	b2c2      	uxtb	r2, r0
+     7ae:	9203      	str	r2, [sp, #12]
+     7b0:	9301      	str	r3, [sp, #4]
+     7b2:	6827      	ldr	r7, [r4, #0]
+     7b4:	2f00      	cmp	r7, #0
+     7b6:	d03d      	beq.n	834 <Heap_Size+0x34>
+     7b8:	2e02      	cmp	r6, #2
+     7ba:	d047      	beq.n	84c <Heap_Size+0x4c>
+     7bc:	8827      	ldrh	r7, [r4, #0]
+     7be:	f8b4 a002 	ldrh.w	r10, [r4, #2]
+     7c2:	3404      	adds	r4, #4
+     7c4:	6cab      	ldr	r3, [r5, #72]	; 0x48
+     7c6:	f02a 0b01 	bic.w	r11, r10, #1
+     7ca:	4640      	mov	r0, r8
+     7cc:	210f      	movs	r1, #15
+     7ce:	449b      	add	r11, r3
+     7d0:	f7ff ff5e 	bl	690 <_Unwind_GetGR>
+     7d4:	4583      	cmp	r11, r0
+     7d6:	d837      	bhi.n	848 <Heap_Size+0x48>
+     7d8:	f027 0301 	bic.w	r3, r7, #1
+     7dc:	449b      	add	r11, r3
+     7de:	4558      	cmp	r0, r11
+     7e0:	bf2c      	ite	cs
+     7e2:	2000      	movcs	r0, #0
+     7e4:	2001      	movcc	r0, #1
+     7e6:	f00a 0a01 	and.w	r10, r10, #1
+     7ea:	f007 0701 	and.w	r7, r7, #1
+     7ee:	ea47 0a4a 	orr.w	r10, r7, r10, lsl #1
+     7f2:	f1ba 0f01 	cmp.w	r10, #1
+     7f6:	d043      	beq.n	880 <Heap_Size+0x80>
+     7f8:	d33a      	bcc.n	870 <Heap_Size+0x70>
+     7fa:	f1ba 0f02 	cmp.w	r10, #2
+     7fe:	d11f      	bne.n	840 <Heap_Size+0x40>
+     800:	6823      	ldr	r3, [r4, #0]
+     802:	f023 4200 	bic.w	r2, r3, #2147483648	; 0x80000000
+     806:	9202      	str	r2, [sp, #8]
+     808:	f1b9 0f00 	cmp.w	r9, #0
+     80c:	d17b      	bne.n	906 <Heap_Size+0x106>
+     80e:	b138      	cbz	r0, 820 <Heap_Size+0x20>
+     810:	9a03      	ldr	r2, [sp, #12]
+     812:	2a00      	cmp	r2, #0
+     814:	f000 8083 	beq.w	91e <Heap_Size+0x11e>
+     818:	9a02      	ldr	r2, [sp, #8]
+     81a:	2a00      	cmp	r2, #0
+     81c:	f000 80a6 	beq.w	96c <Heap_Size+0x16c>
+     820:	2b00      	cmp	r3, #0
+     822:	db7a      	blt.n	91a <Heap_Size+0x11a>
+     824:	9b02      	ldr	r3, [sp, #8]
+     826:	f103 0a01 	add.w	r10, r3, #1
+     82a:	eb04 048a 	add.w	r4, r4, r10, lsl #2
+     82e:	e7c0      	b.n	7b2 <__gnu_unwind_pr_common+0x46>
+     830:	2300      	movs	r3, #0
+     832:	9301      	str	r3, [sp, #4]
+     834:	2e02      	cmp	r6, #2
+     836:	dd40      	ble.n	8ba <Heap_Size+0xba>
+     838:	f7ff fe10 	bl	45c <__gnu_unwind_24bit.isra.1>
+     83c:	2800      	cmp	r0, #0
+     83e:	d042      	beq.n	8c6 <Heap_Size+0xc6>
+     840:	2009      	movs	r0, #9
+     842:	b00b      	add	sp, #44	; 0x2c
+     844:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+     848:	2000      	movs	r0, #0
+     84a:	e7cc      	b.n	7e6 <__gnu_unwind_pr_common+0x7a>
+     84c:	f8d4 a004 	ldr.w	r10, [r4, #4]
+     850:	3408      	adds	r4, #8
+     852:	e7b7      	b.n	7c4 <__gnu_unwind_pr_common+0x58>
+     854:	2b02      	cmp	r3, #2
+     856:	dc9f      	bgt.n	798 <__gnu_unwind_pr_common+0x2c>
+     858:	0c13      	lsrs	r3, r2, #16
+     85a:	b2df      	uxtb	r7, r3
+     85c:	0412      	lsls	r2, r2, #16
+     85e:	2102      	movs	r1, #2
+     860:	f88d 3025 	strb.w	r3, [sp, #37]	; 0x25
+     864:	eb04 0487 	add.w	r4, r4, r7, lsl #2
+     868:	9207      	str	r2, [sp, #28]
+     86a:	f88d 1024 	strb.w	r1, [sp, #36]	; 0x24
+     86e:	e793      	b.n	798 <__gnu_unwind_pr_common+0x2c>
+     870:	f1b9 0f00 	cmp.w	r9, #0
+     874:	d002      	beq.n	87c <Heap_Size+0x7c>
+     876:	2800      	cmp	r0, #0
+     878:	f040 80ad 	bne.w	9d6 <Heap_Size+0x1d6>
+     87c:	3404      	adds	r4, #4
+     87e:	e798      	b.n	7b2 <__gnu_unwind_pr_common+0x46>
+     880:	f1b9 0f00 	cmp.w	r9, #0
+     884:	d126      	bne.n	8d4 <Heap_Size+0xd4>
+     886:	b1b0      	cbz	r0, 8b6 <Heap_Size+0xb6>
+     888:	e894 000c 	ldmia.w	r4, {r2, r3}
+     88c:	0fd7      	lsrs	r7, r2, #31
+     88e:	1c9a      	adds	r2, r3, #2
+     890:	d0d6      	beq.n	840 <Heap_Size+0x40>
+     892:	f105 0258 	add.w	r2, r5, #88	; 0x58
+     896:	3301      	adds	r3, #1
+     898:	9206      	str	r2, [sp, #24]
+     89a:	f000 8092 	beq.w	9c2 <Heap_Size+0x1c2>
+     89e:	1d20      	adds	r0, r4, #4
+     8a0:	f7ff fdd6 	bl	450 <_Unwind_decode_typeinfo_ptr.isra.0>
+     8a4:	463a      	mov	r2, r7
+     8a6:	4601      	mov	r1, r0
+     8a8:	ab06      	add	r3, sp, #24
+     8aa:	4628      	mov	r0, r5
+     8ac:	f3af 8000 	nop.w
+     8b0:	2800      	cmp	r0, #0
+     8b2:	f040 80b5 	bne.w	a20 <Heap_Size+0x220>
+     8b6:	3408      	adds	r4, #8
+     8b8:	e77b      	b.n	7b2 <__gnu_unwind_pr_common+0x46>
+     8ba:	4640      	mov	r0, r8
+     8bc:	a907      	add	r1, sp, #28
+     8be:	f000 fb19 	bl	ef4 <__gnu_unwind_execute>
+     8c2:	2800      	cmp	r0, #0
+     8c4:	d1bc      	bne.n	840 <Heap_Size+0x40>
+     8c6:	9b01      	ldr	r3, [sp, #4]
+     8c8:	2b00      	cmp	r3, #0
+     8ca:	d159      	bne.n	980 <Heap_Size+0x180>
+     8cc:	2008      	movs	r0, #8
+     8ce:	b00b      	add	sp, #44	; 0x2c
+     8d0:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+     8d4:	4640      	mov	r0, r8
+     8d6:	210d      	movs	r1, #13
+     8d8:	6a2f      	ldr	r7, [r5, #32]
+     8da:	f7ff fed9 	bl	690 <_Unwind_GetGR>
+     8de:	4287      	cmp	r7, r0
+     8e0:	d1e9      	bne.n	8b6 <Heap_Size+0xb6>
+     8e2:	6aab      	ldr	r3, [r5, #40]	; 0x28
+     8e4:	429c      	cmp	r4, r3
+     8e6:	d1e6      	bne.n	8b6 <Heap_Size+0xb6>
+     8e8:	4620      	mov	r0, r4
+     8ea:	f7ff fcd7 	bl	29c <selfrel_offset31>
+     8ee:	210f      	movs	r1, #15
+     8f0:	4602      	mov	r2, r0
+     8f2:	4640      	mov	r0, r8
+     8f4:	f7ff fef4 	bl	6e0 <_Unwind_SetGR>
+     8f8:	4640      	mov	r0, r8
+     8fa:	462a      	mov	r2, r5
+     8fc:	2100      	movs	r1, #0
+     8fe:	f7ff feef 	bl	6e0 <_Unwind_SetGR>
+     902:	2007      	movs	r0, #7
+     904:	e79d      	b.n	842 <Heap_Size+0x42>
+     906:	4640      	mov	r0, r8
+     908:	210d      	movs	r1, #13
+     90a:	6a2f      	ldr	r7, [r5, #32]
+     90c:	f7ff fec0 	bl	690 <_Unwind_GetGR>
+     910:	4287      	cmp	r7, r0
+     912:	d045      	beq.n	9a0 <Heap_Size+0x1a0>
+     914:	6823      	ldr	r3, [r4, #0]
+     916:	2b00      	cmp	r3, #0
+     918:	da84      	bge.n	824 <Heap_Size+0x24>
+     91a:	3404      	adds	r4, #4
+     91c:	e782      	b.n	824 <Heap_Size+0x24>
+     91e:	9b02      	ldr	r3, [sp, #8]
+     920:	b323      	cbz	r3, 96c <Heap_Size+0x16c>
+     922:	f105 0358 	add.w	r3, r5, #88	; 0x58
+     926:	9605      	str	r6, [sp, #20]
+     928:	9f03      	ldr	r7, [sp, #12]
+     92a:	f104 0a04 	add.w	r10, r4, #4
+     92e:	f8dd b008 	ldr.w	r11, [sp, #8]
+     932:	f8cd 9010 	str.w	r9, [sp, #16]
+     936:	461e      	mov	r6, r3
+     938:	e002      	b.n	940 <Heap_Size+0x140>
+     93a:	45d9      	cmp	r9, r11
+     93c:	464f      	mov	r7, r9
+     93e:	d015      	beq.n	96c <Heap_Size+0x16c>
+     940:	4650      	mov	r0, r10
+     942:	9606      	str	r6, [sp, #24]
+     944:	f7ff fd84 	bl	450 <_Unwind_decode_typeinfo_ptr.isra.0>
+     948:	2200      	movs	r2, #0
+     94a:	4601      	mov	r1, r0
+     94c:	ab06      	add	r3, sp, #24
+     94e:	4628      	mov	r0, r5
+     950:	f3af 8000 	nop.w
+     954:	f107 0901 	add.w	r9, r7, #1
+     958:	f10a 0a04 	add.w	r10, r10, #4
+     95c:	2800      	cmp	r0, #0
+     95e:	d0ec      	beq.n	93a <Heap_Size+0x13a>
+     960:	9b02      	ldr	r3, [sp, #8]
+     962:	f8dd 9010 	ldr.w	r9, [sp, #16]
+     966:	429f      	cmp	r7, r3
+     968:	9e05      	ldr	r6, [sp, #20]
+     96a:	d1d3      	bne.n	914 <Heap_Size+0x114>
+     96c:	4640      	mov	r0, r8
+     96e:	210d      	movs	r1, #13
+     970:	f7ff fe8e 	bl	690 <_Unwind_GetGR>
+     974:	9b06      	ldr	r3, [sp, #24]
+     976:	6228      	str	r0, [r5, #32]
+     978:	62ac      	str	r4, [r5, #40]	; 0x28
+     97a:	626b      	str	r3, [r5, #36]	; 0x24
+     97c:	2006      	movs	r0, #6
+     97e:	e760      	b.n	842 <Heap_Size+0x42>
+     980:	210f      	movs	r1, #15
+     982:	4640      	mov	r0, r8
+     984:	f7ff fe84 	bl	690 <_Unwind_GetGR>
+     988:	210e      	movs	r1, #14
+     98a:	4602      	mov	r2, r0
+     98c:	4640      	mov	r0, r8
+     98e:	f7ff fea7 	bl	6e0 <_Unwind_SetGR>
+     992:	4640      	mov	r0, r8
+     994:	210f      	movs	r1, #15
+     996:	4a29      	ldr	r2, [pc, #164]	; (a3c <Heap_Size+0x23c>)
+     998:	f7ff fea2 	bl	6e0 <_Unwind_SetGR>
+     99c:	2007      	movs	r0, #7
+     99e:	e750      	b.n	842 <Heap_Size+0x42>
+     9a0:	6aab      	ldr	r3, [r5, #40]	; 0x28
+     9a2:	429c      	cmp	r4, r3
+     9a4:	d1b6      	bne.n	914 <Heap_Size+0x114>
+     9a6:	2204      	movs	r2, #4
+     9a8:	9902      	ldr	r1, [sp, #8]
+     9aa:	2700      	movs	r7, #0
+     9ac:	18a3      	adds	r3, r4, r2
+     9ae:	62a9      	str	r1, [r5, #40]	; 0x28
+     9b0:	62ef      	str	r7, [r5, #44]	; 0x2c
+     9b2:	632a      	str	r2, [r5, #48]	; 0x30
+     9b4:	636b      	str	r3, [r5, #52]	; 0x34
+     9b6:	6823      	ldr	r3, [r4, #0]
+     9b8:	42bb      	cmp	r3, r7
+     9ba:	db1f      	blt.n	9fc <Heap_Size+0x1fc>
+     9bc:	2301      	movs	r3, #1
+     9be:	9301      	str	r3, [sp, #4]
+     9c0:	e730      	b.n	824 <Heap_Size+0x24>
+     9c2:	4640      	mov	r0, r8
+     9c4:	210d      	movs	r1, #13
+     9c6:	f7ff fe63 	bl	690 <_Unwind_GetGR>
+     9ca:	6228      	str	r0, [r5, #32]
+     9cc:	9b06      	ldr	r3, [sp, #24]
+     9ce:	626b      	str	r3, [r5, #36]	; 0x24
+     9d0:	62ac      	str	r4, [r5, #40]	; 0x28
+     9d2:	2006      	movs	r0, #6
+     9d4:	e735      	b.n	842 <Heap_Size+0x42>
+     9d6:	4620      	mov	r0, r4
+     9d8:	f7ff fc60 	bl	29c <selfrel_offset31>
+     9dc:	3404      	adds	r4, #4
+     9de:	4606      	mov	r6, r0
+     9e0:	63ac      	str	r4, [r5, #56]	; 0x38
+     9e2:	4628      	mov	r0, r5
+     9e4:	f3af 8000 	nop.w
+     9e8:	2800      	cmp	r0, #0
+     9ea:	f43f af29 	beq.w	840 <Heap_Size+0x40>
+     9ee:	4640      	mov	r0, r8
+     9f0:	4632      	mov	r2, r6
+     9f2:	210f      	movs	r1, #15
+     9f4:	f7ff fe74 	bl	6e0 <_Unwind_SetGR>
+     9f8:	2007      	movs	r0, #7
+     9fa:	e722      	b.n	842 <Heap_Size+0x42>
+     9fc:	4608      	mov	r0, r1
+     9fe:	3001      	adds	r0, #1
+     a00:	eb04 0080 	add.w	r0, r4, r0, lsl #2
+     a04:	f7ff fc4a 	bl	29c <selfrel_offset31>
+     a08:	210f      	movs	r1, #15
+     a0a:	4602      	mov	r2, r0
+     a0c:	4640      	mov	r0, r8
+     a0e:	f7ff fe67 	bl	6e0 <_Unwind_SetGR>
+     a12:	4640      	mov	r0, r8
+     a14:	4639      	mov	r1, r7
+     a16:	462a      	mov	r2, r5
+     a18:	f7ff fe62 	bl	6e0 <_Unwind_SetGR>
+     a1c:	2007      	movs	r0, #7
+     a1e:	e710      	b.n	842 <Heap_Size+0x42>
+     a20:	4607      	mov	r7, r0
+     a22:	210d      	movs	r1, #13
+     a24:	4640      	mov	r0, r8
+     a26:	f7ff fe33 	bl	690 <_Unwind_GetGR>
+     a2a:	2f02      	cmp	r7, #2
+     a2c:	6228      	str	r0, [r5, #32]
+     a2e:	d1cd      	bne.n	9cc <Heap_Size+0x1cc>
+     a30:	462b      	mov	r3, r5
+     a32:	9a06      	ldr	r2, [sp, #24]
+     a34:	f843 2f2c 	str.w	r2, [r3, #44]!
+     a38:	626b      	str	r3, [r5, #36]	; 0x24
+     a3a:	e7c9      	b.n	9d0 <Heap_Size+0x1d0>
+     a3c:	00000000 	.word	0x00000000
+
+00000a40 <__aeabi_unwind_cpp_pr0>:
+     a40:	2300      	movs	r3, #0
+     a42:	e693      	b.n	76c <__gnu_unwind_pr_common>
+
+00000a44 <__aeabi_unwind_cpp_pr1>:
+     a44:	2301      	movs	r3, #1
+     a46:	e691      	b.n	76c <__gnu_unwind_pr_common>
+
+00000a48 <__aeabi_unwind_cpp_pr2>:
+     a48:	2302      	movs	r3, #2
+     a4a:	e68f      	b.n	76c <__gnu_unwind_pr_common>
+
+00000a4c <_Unwind_VRS_Pop>:
+     a4c:	b5f0      	push	{r4, r5, r6, r7, lr}
+     a4e:	4605      	mov	r5, r0
+     a50:	b0c5      	sub	sp, #276	; 0x114
+     a52:	2904      	cmp	r1, #4
+     a54:	d80c      	bhi.n	a70 <_Unwind_VRS_Pop+0x24>
+     a56:	e8df f001 	tbb	[pc, r1]
+     a5a:	0356      	.short	0x0356
+     a5c:	300b      	.short	0x300b
+     a5e:	0e          	.byte	0x0e
+     a5f:	00          	.byte	0x00
+     a60:	2b01      	cmp	r3, #1
+     a62:	ea4f 4412 	mov.w	r4, r2, lsr #16
+     a66:	b296      	uxth	r6, r2
+     a68:	d065      	beq.n	b36 <_Unwind_VRS_Pop+0xea>
+     a6a:	2b05      	cmp	r3, #5
+     a6c:	f000 8083 	beq.w	b76 <_Unwind_VRS_Pop+0x12a>
+     a70:	2002      	movs	r0, #2
+     a72:	b045      	add	sp, #276	; 0x114
+     a74:	bdf0      	pop	{r4, r5, r6, r7, pc}
+     a76:	2b00      	cmp	r3, #0
+     a78:	d1fa      	bne.n	a70 <_Unwind_VRS_Pop+0x24>
+     a7a:	2a10      	cmp	r2, #16
+     a7c:	d8f8      	bhi.n	a70 <_Unwind_VRS_Pop+0x24>
+     a7e:	682b      	ldr	r3, [r5, #0]
+     a80:	06dc      	lsls	r4, r3, #27
+     a82:	f100 80e9 	bmi.w	c58 <Stack_Size+0x58>
+     a86:	ae22      	add	r6, sp, #136	; 0x88
+     a88:	4630      	mov	r0, r6
+     a8a:	9201      	str	r2, [sp, #4]
+     a8c:	f000 f9a2 	bl	dd4 <__gnu_Unwind_Save_WMMXC>
+     a90:	6ba8      	ldr	r0, [r5, #56]	; 0x38
+     a92:	9a01      	ldr	r2, [sp, #4]
+     a94:	2300      	movs	r3, #0
+     a96:	2401      	movs	r4, #1
+     a98:	fa04 f103 	lsl.w	r1, r4, r3
+     a9c:	4211      	tst	r1, r2
+     a9e:	d003      	beq.n	aa8 <_Unwind_VRS_Pop+0x5c>
+     aa0:	6801      	ldr	r1, [r0, #0]
+     aa2:	3004      	adds	r0, #4
+     aa4:	f846 1023 	str.w	r1, [r6, r3, lsl #2]
+     aa8:	3301      	adds	r3, #1
+     aaa:	2b04      	cmp	r3, #4
+     aac:	d1f4      	bne.n	a98 <_Unwind_VRS_Pop+0x4c>
+     aae:	63a8      	str	r0, [r5, #56]	; 0x38
+     ab0:	4630      	mov	r0, r6
+     ab2:	f000 f985 	bl	dc0 <__gnu_Unwind_Restore_WMMXC>
+     ab6:	2000      	movs	r0, #0
+     ab8:	e7db      	b.n	a72 <_Unwind_VRS_Pop+0x26>
+     aba:	2b03      	cmp	r3, #3
+     abc:	d1d8      	bne.n	a70 <_Unwind_VRS_Pop+0x24>
+     abe:	0c14      	lsrs	r4, r2, #16
+     ac0:	b297      	uxth	r7, r2
+     ac2:	193b      	adds	r3, r7, r4
+     ac4:	2b10      	cmp	r3, #16
+     ac6:	d8d3      	bhi.n	a70 <_Unwind_VRS_Pop+0x24>
+     ac8:	682b      	ldr	r3, [r5, #0]
+     aca:	071e      	lsls	r6, r3, #28
+     acc:	f100 80e4 	bmi.w	c98 <Stack_Size+0x98>
+     ad0:	ae22      	add	r6, sp, #136	; 0x88
+     ad2:	4630      	mov	r0, r6
+     ad4:	007f      	lsls	r7, r7, #1
+     ad6:	f000 f951 	bl	d7c <__gnu_Unwind_Save_WMMXD>
+     ada:	eb06 02c4 	add.w	r2, r6, r4, lsl #3
+     ade:	1e7b      	subs	r3, r7, #1
+     ae0:	6bac      	ldr	r4, [r5, #56]	; 0x38
+     ae2:	b157      	cbz	r7, afa <_Unwind_VRS_Pop+0xae>
+     ae4:	4621      	mov	r1, r4
+     ae6:	3a04      	subs	r2, #4
+     ae8:	f851 0b04 	ldr.w	r0, [r1], #4
+     aec:	3b01      	subs	r3, #1
+     aee:	f842 0f04 	str.w	r0, [r2, #4]!
+     af2:	1c58      	adds	r0, r3, #1
+     af4:	d1f8      	bne.n	ae8 <_Unwind_VRS_Pop+0x9c>
+     af6:	eb04 0487 	add.w	r4, r4, r7, lsl #2
+     afa:	4630      	mov	r0, r6
+     afc:	63ac      	str	r4, [r5, #56]	; 0x38
+     afe:	f000 f91b 	bl	d38 <__gnu_Unwind_Restore_WMMXD>
+     b02:	2000      	movs	r0, #0
+     b04:	e7b5      	b.n	a72 <_Unwind_VRS_Pop+0x26>
+     b06:	2b00      	cmp	r3, #0
+     b08:	d1b2      	bne.n	a70 <_Unwind_VRS_Pop+0x24>
+     b0a:	6bac      	ldr	r4, [r5, #56]	; 0x38
+     b0c:	b297      	uxth	r7, r2
+     b0e:	1d28      	adds	r0, r5, #4
+     b10:	2601      	movs	r6, #1
+     b12:	fa06 f103 	lsl.w	r1, r6, r3
+     b16:	4239      	tst	r1, r7
+     b18:	f103 0301 	add.w	r3, r3, #1
+     b1c:	d002      	beq.n	b24 <_Unwind_VRS_Pop+0xd8>
+     b1e:	6821      	ldr	r1, [r4, #0]
+     b20:	3404      	adds	r4, #4
+     b22:	6001      	str	r1, [r0, #0]
+     b24:	2b10      	cmp	r3, #16
+     b26:	f100 0004 	add.w	r0, r0, #4
+     b2a:	d1f2      	bne.n	b12 <_Unwind_VRS_Pop+0xc6>
+     b2c:	f412 5000 	ands.w	r0, r2, #8192	; 0x2000
+     b30:	d11f      	bne.n	b72 <_Unwind_VRS_Pop+0x126>
+     b32:	63ac      	str	r4, [r5, #56]	; 0x38
+     b34:	e79d      	b.n	a72 <_Unwind_VRS_Pop+0x26>
+     b36:	1932      	adds	r2, r6, r4
+     b38:	2a10      	cmp	r2, #16
+     b3a:	d899      	bhi.n	a70 <_Unwind_VRS_Pop+0x24>
+     b3c:	2c0f      	cmp	r4, #15
+     b3e:	d897      	bhi.n	a70 <_Unwind_VRS_Pop+0x24>
+     b40:	6829      	ldr	r1, [r5, #0]
+     b42:	2700      	movs	r7, #0
+     b44:	07c8      	lsls	r0, r1, #31
+     b46:	d454      	bmi.n	bf2 <_Unwind_VRS_Pop+0x1a6>
+     b48:	a822      	add	r0, sp, #136	; 0x88
+     b4a:	9301      	str	r3, [sp, #4]
+     b4c:	f000 f8e0 	bl	d10 <__gnu_Unwind_Save_VFP>
+     b50:	9b01      	ldr	r3, [sp, #4]
+     b52:	e019      	b.n	b88 <_Unwind_VRS_Pop+0x13c>
+     b54:	4608      	mov	r0, r1
+     b56:	4637      	mov	r7, r6
+     b58:	2b01      	cmp	r3, #1
+     b5a:	f000 8097 	beq.w	c8c <Stack_Size+0x8c>
+     b5e:	2c0f      	cmp	r4, #15
+     b60:	63a8      	str	r0, [r5, #56]	; 0x38
+     b62:	d802      	bhi.n	b6a <_Unwind_VRS_Pop+0x11e>
+     b64:	a822      	add	r0, sp, #136	; 0x88
+     b66:	f000 f8d7 	bl	d18 <__gnu_Unwind_Restore_VFP_D>
+     b6a:	b117      	cbz	r7, b72 <_Unwind_VRS_Pop+0x126>
+     b6c:	a802      	add	r0, sp, #8
+     b6e:	f000 f8db 	bl	d28 <__gnu_Unwind_Restore_VFP_D_16_to_31>
+     b72:	2000      	movs	r0, #0
+     b74:	e77d      	b.n	a72 <_Unwind_VRS_Pop+0x26>
+     b76:	1937      	adds	r7, r6, r4
+     b78:	2f20      	cmp	r7, #32
+     b7a:	f63f af79 	bhi.w	a70 <_Unwind_VRS_Pop+0x24>
+     b7e:	2c0f      	cmp	r4, #15
+     b80:	d930      	bls.n	be4 <_Unwind_VRS_Pop+0x198>
+     b82:	4637      	mov	r7, r6
+     b84:	2e00      	cmp	r6, #0
+     b86:	d144      	bne.n	c12 <Stack_Size+0x12>
+     b88:	6ba9      	ldr	r1, [r5, #56]	; 0x38
+     b8a:	4632      	mov	r2, r6
+     b8c:	2e00      	cmp	r6, #0
+     b8e:	d0e1      	beq.n	b54 <_Unwind_VRS_Pop+0x108>
+     b90:	2700      	movs	r7, #0
+     b92:	468e      	mov	lr, r1
+     b94:	a844      	add	r0, sp, #272	; 0x110
+     b96:	ea4f 0c42 	mov.w	r12, r2, lsl #1
+     b9a:	eb00 00c4 	add.w	r0, r0, r4, lsl #3
+     b9e:	f10c 32ff 	add.w	r2, r12, #4294967295
+     ba2:	388c      	subs	r0, #140	; 0x8c
+     ba4:	f85e 6b04 	ldr.w	r6, [lr], #4
+     ba8:	3a01      	subs	r2, #1
+     baa:	f840 6f04 	str.w	r6, [r0, #4]!
+     bae:	1c56      	adds	r6, r2, #1
+     bb0:	d1f8      	bne.n	ba4 <_Unwind_VRS_Pop+0x158>
+     bb2:	eb01 008c 	add.w	r0, r1, r12, lsl #2
+     bb6:	2f00      	cmp	r7, #0
+     bb8:	d0ce      	beq.n	b58 <_Unwind_VRS_Pop+0x10c>
+     bba:	4622      	mov	r2, r4
+     bbc:	2c10      	cmp	r4, #16
+     bbe:	a944      	add	r1, sp, #272	; 0x110
+     bc0:	bf38      	it	cc
+     bc2:	2210      	movcc	r2, #16
+     bc4:	eb01 02c2 	add.w	r2, r1, r2, lsl #3
+     bc8:	f5a2 72c4 	sub.w	r2, r2, #392	; 0x188
+     bcc:	4601      	mov	r1, r0
+     bce:	0078      	lsls	r0, r7, #1
+     bd0:	3a04      	subs	r2, #4
+     bd2:	eb01 0080 	add.w	r0, r1, r0, lsl #2
+     bd6:	f851 6b04 	ldr.w	r6, [r1], #4
+     bda:	4281      	cmp	r1, r0
+     bdc:	f842 6f04 	str.w	r6, [r2, #4]!
+     be0:	d1f9      	bne.n	bd6 <_Unwind_VRS_Pop+0x18a>
+     be2:	e7b9      	b.n	b58 <_Unwind_VRS_Pop+0x10c>
+     be4:	2f10      	cmp	r7, #16
+     be6:	d941      	bls.n	c6c <Stack_Size+0x6c>
+     be8:	682a      	ldr	r2, [r5, #0]
+     bea:	3f10      	subs	r7, #16
+     bec:	07d0      	lsls	r0, r2, #31
+     bee:	4611      	mov	r1, r2
+     bf0:	d510      	bpl.n	c14 <Stack_Size+0x14>
+     bf2:	f021 0201 	bic.w	r2, r1, #1
+     bf6:	2b05      	cmp	r3, #5
+     bf8:	602a      	str	r2, [r5, #0]
+     bfa:	9301      	str	r3, [sp, #4]
+     bfc:	4628      	mov	r0, r5
+     bfe:	d05b      	beq.n	cb8 <Stack_Size+0xb8>
+     c00:	f021 0103 	bic.w	r1, r1, #3
+     c04:	f840 1b48 	str.w	r1, [r0], #72
+     c08:	f000 f882 	bl	d10 <__gnu_Unwind_Save_VFP>
+     c0c:	9b01      	ldr	r3, [sp, #4]
+     c0e:	2f00      	cmp	r7, #0
+     c10:	d04a      	beq.n	ca8 <Stack_Size+0xa8>
+     c12:	682a      	ldr	r2, [r5, #0]
+     c14:	0751      	lsls	r1, r2, #29
+     c16:	d45b      	bmi.n	cd0 <Stack_Size+0xd0>
+     c18:	2b01      	cmp	r3, #1
+     c1a:	d063      	beq.n	ce4 <Stack_Size+0xe4>
+     c1c:	2c0f      	cmp	r4, #15
+     c1e:	d804      	bhi.n	c2a <Stack_Size+0x2a>
+     c20:	a822      	add	r0, sp, #136	; 0x88
+     c22:	9301      	str	r3, [sp, #4]
+     c24:	f000 f87c 	bl	d20 <__gnu_Unwind_Save_VFP_D>
+     c28:	9b01      	ldr	r3, [sp, #4]
+     c2a:	2f00      	cmp	r7, #0
+     c2c:	d0ac      	beq.n	b88 <_Unwind_VRS_Pop+0x13c>
+     c2e:	a802      	add	r0, sp, #8
+     c30:	9301      	str	r3, [sp, #4]
+     c32:	f000 f87d 	bl	d30 <__gnu_Unwind_Save_VFP_D_16_to_31>
+     c36:	9b01      	ldr	r3, [sp, #4]
+     c38:	f1c4 0210 	rsb	r2, r4, #16
+     c3c:	2a00      	cmp	r2, #0
+     c3e:	6ba9      	ldr	r1, [r5, #56]	; 0x38
+     c40:	dca7      	bgt.n	b92 <_Unwind_VRS_Pop+0x146>
+     c42:	4622      	mov	r2, r4
+     c44:	2c10      	cmp	r4, #16
+     c46:	a844      	add	r0, sp, #272	; 0x110
+     c48:	bf38      	it	cc
+     c4a:	2210      	movcc	r2, #16
+     c4c:	eb00 02c2 	add.w	r2, r0, r2, lsl #3
+     c50:	f5a2 72c4 	sub.w	r2, r2, #392	; 0x188
+     c54:	0078      	lsls	r0, r7, #1
+     c56:	e7bb      	b.n	bd0 <_Unwind_VRS_Pop+0x184>
+     c58:	f023 0310 	bic.w	r3, r3, #16
+     c5c:	602b      	str	r3, [r5, #0]
+     c5e:	f505 70e8 	add.w	r0, r5, #464	; 0x1d0
+     c62:	9201      	str	r2, [sp, #4]
+     c64:	f000 f8b6 	bl	dd4 <__gnu_Unwind_Save_WMMXC>
+     c68:	9a01      	ldr	r2, [sp, #4]
+     c6a:	e70c      	b.n	a86 <_Unwind_VRS_Pop+0x3a>
+     c6c:	6829      	ldr	r1, [r5, #0]
+     c6e:	07c8      	lsls	r0, r1, #31
+     c70:	d51d      	bpl.n	cae <Stack_Size+0xae>
+     c72:	4628      	mov	r0, r5
+     c74:	f021 0201 	bic.w	r2, r1, #1
+     c78:	f042 0202 	orr.w	r2, r2, #2
+     c7c:	f840 2b48 	str.w	r2, [r0], #72
+     c80:	9301      	str	r3, [sp, #4]
+     c82:	2700      	movs	r7, #0
+     c84:	f000 f84c 	bl	d20 <__gnu_Unwind_Save_VFP_D>
+     c88:	9b01      	ldr	r3, [sp, #4]
+     c8a:	e7c9      	b.n	c20 <Stack_Size+0x20>
+     c8c:	3004      	adds	r0, #4
+     c8e:	63a8      	str	r0, [r5, #56]	; 0x38
+     c90:	a822      	add	r0, sp, #136	; 0x88
+     c92:	f000 f839 	bl	d08 <__gnu_Unwind_Restore_VFP>
+     c96:	e76c      	b.n	b72 <_Unwind_VRS_Pop+0x126>
+     c98:	f023 0308 	bic.w	r3, r3, #8
+     c9c:	602b      	str	r3, [r5, #0]
+     c9e:	f505 70a8 	add.w	r0, r5, #336	; 0x150
+     ca2:	f000 f86b 	bl	d7c <__gnu_Unwind_Save_WMMXD>
+     ca6:	e713      	b.n	ad0 <_Unwind_VRS_Pop+0x84>
+     ca8:	2b01      	cmp	r3, #1
+     caa:	f43f af4d 	beq.w	b48 <_Unwind_VRS_Pop+0xfc>
+     cae:	2c0f      	cmp	r4, #15
+     cb0:	bf98      	it	ls
+     cb2:	2700      	movls	r7, #0
+     cb4:	d9b4      	bls.n	c20 <Stack_Size+0x20>
+     cb6:	e767      	b.n	b88 <_Unwind_VRS_Pop+0x13c>
+     cb8:	f042 0202 	orr.w	r2, r2, #2
+     cbc:	f840 2b48 	str.w	r2, [r0], #72
+     cc0:	f000 f82e 	bl	d20 <__gnu_Unwind_Save_VFP_D>
+     cc4:	9b01      	ldr	r3, [sp, #4]
+     cc6:	2f00      	cmp	r7, #0
+     cc8:	d0aa      	beq.n	c20 <Stack_Size+0x20>
+     cca:	682a      	ldr	r2, [r5, #0]
+     ccc:	0751      	lsls	r1, r2, #29
+     cce:	d5a5      	bpl.n	c1c <Stack_Size+0x1c>
+     cd0:	4628      	mov	r0, r5
+     cd2:	f022 0204 	bic.w	r2, r2, #4
+     cd6:	f840 2bd0 	str.w	r2, [r0], #208
+     cda:	9301      	str	r3, [sp, #4]
+     cdc:	f000 f828 	bl	d30 <__gnu_Unwind_Save_VFP_D_16_to_31>
+     ce0:	9b01      	ldr	r3, [sp, #4]
+     ce2:	e799      	b.n	c18 <Stack_Size+0x18>
+     ce4:	a822      	add	r0, sp, #136	; 0x88
+     ce6:	9301      	str	r3, [sp, #4]
+     ce8:	f000 f812 	bl	d10 <__gnu_Unwind_Save_VFP>
+     cec:	9b01      	ldr	r3, [sp, #4]
+     cee:	e7a3      	b.n	c38 <Stack_Size+0x38>
+
+00000cf0 <__restore_core_regs>:
+     cf0:	f100 0134 	add.w	r1, r0, #52	; 0x34
+     cf4:	e891 0038 	ldmia.w	r1, {r3, r4, r5}
+     cf8:	469c      	mov	r12, r3
+     cfa:	46a6      	mov	lr, r4
+     cfc:	f84c 5d04 	str.w	r5, [r12, #-4]!
+     d00:	e890 0fff 	ldmia.w	r0, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11}
+     d04:	46e5      	mov	sp, r12
+     d06:	bd00      	pop	{pc}
+
+00000d08 <__gnu_Unwind_Restore_VFP>:
+     d08:	ec90 0b21 	fldmiax	r0, {d0-d15}	;@ Deprecated
+     d0c:	4770      	bx	lr
+     d0e:	bf00      	nop
+
+00000d10 <__gnu_Unwind_Save_VFP>:
+     d10:	ec80 0b21 	fstmiax	r0, {d0-d15}	;@ Deprecated
+     d14:	4770      	bx	lr
+     d16:	bf00      	nop
+
+00000d18 <__gnu_Unwind_Restore_VFP_D>:
+     d18:	ec90 0b20 	vldmia	r0, {d0-d15}
+     d1c:	4770      	bx	lr
+     d1e:	bf00      	nop
+
+00000d20 <__gnu_Unwind_Save_VFP_D>:
+     d20:	ec80 0b20 	vstmia	r0, {d0-d15}
+     d24:	4770      	bx	lr
+     d26:	bf00      	nop
+
+00000d28 <__gnu_Unwind_Restore_VFP_D_16_to_31>:
+     d28:	ecd0 0b20 	vldmia	r0, {d16-d31}
+     d2c:	4770      	bx	lr
+     d2e:	bf00      	nop
+
+00000d30 <__gnu_Unwind_Save_VFP_D_16_to_31>:
+     d30:	ecc0 0b20 	vstmia	r0, {d16-d31}
+     d34:	4770      	bx	lr
+     d36:	bf00      	nop
+
+00000d38 <__gnu_Unwind_Restore_WMMXD>:
+     d38:	ecf0 0102 	ldfe	f0, [r0], #8
+     d3c:	ecf0 1102 	ldfe	f1, [r0], #8
+     d40:	ecf0 2102 	ldfe	f2, [r0], #8
+     d44:	ecf0 3102 	ldfe	f3, [r0], #8
+     d48:	ecf0 4102 	ldfe	f4, [r0], #8
+     d4c:	ecf0 5102 	ldfe	f5, [r0], #8
+     d50:	ecf0 6102 	ldfe	f6, [r0], #8
+     d54:	ecf0 7102 	ldfe	f7, [r0], #8
+     d58:	ecf0 8102 	ldfp	f0, [r0], #8
+     d5c:	ecf0 9102 	ldfp	f1, [r0], #8
+     d60:	ecf0 a102 	ldfp	f2, [r0], #8
+     d64:	ecf0 b102 	ldfp	f3, [r0], #8
+     d68:	ecf0 c102 	ldfp	f4, [r0], #8
+     d6c:	ecf0 d102 	ldfp	f5, [r0], #8
+     d70:	ecf0 e102 	ldfp	f6, [r0], #8
+     d74:	ecf0 f102 	ldfp	f7, [r0], #8
+     d78:	4770      	bx	lr
+     d7a:	bf00      	nop
+
+00000d7c <__gnu_Unwind_Save_WMMXD>:
+     d7c:	ece0 0102 	stfe	f0, [r0], #8
+     d80:	ece0 1102 	stfe	f1, [r0], #8
+     d84:	ece0 2102 	stfe	f2, [r0], #8
+     d88:	ece0 3102 	stfe	f3, [r0], #8
+     d8c:	ece0 4102 	stfe	f4, [r0], #8
+     d90:	ece0 5102 	stfe	f5, [r0], #8
+     d94:	ece0 6102 	stfe	f6, [r0], #8
+     d98:	ece0 7102 	stfe	f7, [r0], #8
+     d9c:	ece0 8102 	stfp	f0, [r0], #8
+     da0:	ece0 9102 	stfp	f1, [r0], #8
+     da4:	ece0 a102 	stfp	f2, [r0], #8
+     da8:	ece0 b102 	stfp	f3, [r0], #8
+     dac:	ece0 c102 	stfp	f4, [r0], #8
+     db0:	ece0 d102 	stfp	f5, [r0], #8
+     db4:	ece0 e102 	stfp	f6, [r0], #8
+     db8:	ece0 f102 	stfp	f7, [r0], #8
+     dbc:	4770      	bx	lr
+     dbe:	bf00      	nop
+
+00000dc0 <__gnu_Unwind_Restore_WMMXC>:
+     dc0:	fcb0 8101 	ldc2	1, cr8, [r0], #4
+     dc4:	fcb0 9101 	ldc2	1, cr9, [r0], #4
+     dc8:	fcb0 a101 	ldc2	1, cr10, [r0], #4
+     dcc:	fcb0 b101 	ldc2	1, cr11, [r0], #4
+     dd0:	4770      	bx	lr
+     dd2:	bf00      	nop
+
+00000dd4 <__gnu_Unwind_Save_WMMXC>:
+     dd4:	fca0 8101 	stc2	1, cr8, [r0], #4
+     dd8:	fca0 9101 	stc2	1, cr9, [r0], #4
+     ddc:	fca0 a101 	stc2	1, cr10, [r0], #4
+     de0:	fca0 b101 	stc2	1, cr11, [r0], #4
+     de4:	4770      	bx	lr
+     de6:	bf00      	nop
+
+00000de8 <_Unwind_RaiseException>:
+     de8:	46ec      	mov	r12, sp
+     dea:	b500      	push	{lr}
+     dec:	e92d 5000 	stmdb	sp!, {r12, lr}
+     df0:	e92d 1fff 	stmdb	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12}
+     df4:	f04f 0300 	mov.w	r3, #0
+     df8:	e92d 000c 	stmdb	sp!, {r2, r3}
+     dfc:	a901      	add	r1, sp, #4
+     dfe:	f7ff fbbf 	bl	580 <__gnu_Unwind_RaiseException>
+     e02:	f8dd e040 	ldr.w	lr, [sp, #64]	; 0x40
+     e06:	b012      	add	sp, #72	; 0x48
+     e08:	4770      	bx	lr
+     e0a:	bf00      	nop
+
+00000e0c <_Unwind_Resume>:
+     e0c:	46ec      	mov	r12, sp
+     e0e:	b500      	push	{lr}
+     e10:	e92d 5000 	stmdb	sp!, {r12, lr}
+     e14:	e92d 1fff 	stmdb	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12}
+     e18:	f04f 0300 	mov.w	r3, #0
+     e1c:	e92d 000c 	stmdb	sp!, {r2, r3}
+     e20:	a901      	add	r1, sp, #4
+     e22:	f7ff fbe7 	bl	5f4 <__gnu_Unwind_Resume>
+     e26:	f8dd e040 	ldr.w	lr, [sp, #64]	; 0x40
+     e2a:	b012      	add	sp, #72	; 0x48
+     e2c:	4770      	bx	lr
+     e2e:	bf00      	nop
+
+00000e30 <_Unwind_Resume_or_Rethrow>:
+     e30:	46ec      	mov	r12, sp
+     e32:	b500      	push	{lr}
+     e34:	e92d 5000 	stmdb	sp!, {r12, lr}
+     e38:	e92d 1fff 	stmdb	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12}
+     e3c:	f04f 0300 	mov.w	r3, #0
+     e40:	e92d 000c 	stmdb	sp!, {r2, r3}
+     e44:	a901      	add	r1, sp, #4
+     e46:	f7ff fbf7 	bl	638 <__gnu_Unwind_Resume_or_Rethrow>
+     e4a:	f8dd e040 	ldr.w	lr, [sp, #64]	; 0x40
+     e4e:	b012      	add	sp, #72	; 0x48
+     e50:	4770      	bx	lr
+     e52:	bf00      	nop
+
+00000e54 <_Unwind_ForcedUnwind>:
+     e54:	46ec      	mov	r12, sp
+     e56:	b500      	push	{lr}
+     e58:	e92d 5000 	stmdb	sp!, {r12, lr}
+     e5c:	e92d 1fff 	stmdb	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12}
+     e60:	f04f 0300 	mov.w	r3, #0
+     e64:	e92d 000c 	stmdb	sp!, {r2, r3}
+     e68:	ab01      	add	r3, sp, #4
+     e6a:	f7ff fbb9 	bl	5e0 <__gnu_Unwind_ForcedUnwind>
+     e6e:	f8dd e040 	ldr.w	lr, [sp, #64]	; 0x40
+     e72:	b012      	add	sp, #72	; 0x48
+     e74:	4770      	bx	lr
+     e76:	bf00      	nop
+
+00000e78 <_Unwind_Backtrace>:
+     e78:	46ec      	mov	r12, sp
+     e7a:	b500      	push	{lr}
+     e7c:	e92d 5000 	stmdb	sp!, {r12, lr}
+     e80:	e92d 1fff 	stmdb	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12}
+     e84:	f04f 0300 	mov.w	r3, #0
+     e88:	e92d 000c 	stmdb	sp!, {r2, r3}
+     e8c:	aa01      	add	r2, sp, #4
+     e8e:	f7ff fc35 	bl	6fc <__gnu_Unwind_Backtrace>
+     e92:	f8dd e040 	ldr.w	lr, [sp, #64]	; 0x40
+     e96:	b012      	add	sp, #72	; 0x48
+     e98:	4770      	bx	lr
+     e9a:	bf00      	nop
+
+00000e9c <next_unwind_byte>:
+     e9c:	7a03      	ldrb	r3, [r0, #8]
+     e9e:	b91b      	cbnz	r3, ea8 <next_unwind_byte+0xc>
+     ea0:	7a43      	ldrb	r3, [r0, #9]
+     ea2:	b943      	cbnz	r3, eb6 <next_unwind_byte+0x1a>
+     ea4:	20b0      	movs	r0, #176	; 0xb0
+     ea6:	4770      	bx	lr
+     ea8:	1e5a      	subs	r2, r3, #1
+     eaa:	6803      	ldr	r3, [r0, #0]
+     eac:	7202      	strb	r2, [r0, #8]
+     eae:	021a      	lsls	r2, r3, #8
+     eb0:	6002      	str	r2, [r0, #0]
+     eb2:	0e18      	lsrs	r0, r3, #24
+     eb4:	4770      	bx	lr
+     eb6:	6842      	ldr	r2, [r0, #4]
+     eb8:	3b01      	subs	r3, #1
+     eba:	b410      	push	{r4}
+     ebc:	7243      	strb	r3, [r0, #9]
+     ebe:	6813      	ldr	r3, [r2, #0]
+     ec0:	2103      	movs	r1, #3
+     ec2:	1d14      	adds	r4, r2, #4
+     ec4:	7201      	strb	r1, [r0, #8]
+     ec6:	021a      	lsls	r2, r3, #8
+     ec8:	6044      	str	r4, [r0, #4]
+     eca:	6002      	str	r2, [r0, #0]
+     ecc:	f85d 4b04 	ldr.w	r4, [sp], #4
+     ed0:	0e18      	lsrs	r0, r3, #24
+     ed2:	4770      	bx	lr
+
+00000ed4 <_Unwind_GetGR.constprop.0>:
+     ed4:	b500      	push	{lr}
+     ed6:	b085      	sub	sp, #20
+     ed8:	ab03      	add	r3, sp, #12
+     eda:	2100      	movs	r1, #0
+     edc:	9300      	str	r3, [sp, #0]
+     ede:	220c      	movs	r2, #12
+     ee0:	460b      	mov	r3, r1
+     ee2:	f7ff fbbb 	bl	65c <_Unwind_VRS_Get>
+     ee6:	9803      	ldr	r0, [sp, #12]
+     ee8:	b005      	add	sp, #20
+     eea:	f85d fb04 	ldr.w	pc, [sp], #4
+     eee:	bf00      	nop
+
+00000ef0 <unwind_UCB_from_context>:
+     ef0:	e7f0      	b.n	ed4 <_Unwind_GetGR.constprop.0>
+     ef2:	bf00      	nop
+
+00000ef4 <__gnu_unwind_execute>:
+     ef4:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+     ef8:	4606      	mov	r6, r0
+     efa:	460d      	mov	r5, r1
+     efc:	b085      	sub	sp, #20
+     efe:	f04f 0800 	mov.w	r8, #0
+     f02:	4628      	mov	r0, r5
+     f04:	f7ff ffca 	bl	e9c <next_unwind_byte>
+     f08:	28b0      	cmp	r0, #176	; 0xb0
+     f0a:	4604      	mov	r4, r0
+     f0c:	f000 80b5 	beq.w	107a <__gnu_unwind_execute+0x186>
+     f10:	f020 017f 	bic.w	r1, r0, #127	; 0x7f
+     f14:	f011 01ff 	ands.w	r1, r1, #255	; 0xff
+     f18:	d020      	beq.n	f5c <__gnu_unwind_execute+0x68>
+     f1a:	f000 03f0 	and.w	r3, r0, #240	; 0xf0
+     f1e:	2b80      	cmp	r3, #128	; 0x80
+     f20:	d07a      	beq.n	1018 <__gnu_unwind_execute+0x124>
+     f22:	2b90      	cmp	r3, #144	; 0x90
+     f24:	d036      	beq.n	f94 <__gnu_unwind_execute+0xa0>
+     f26:	2ba0      	cmp	r3, #160	; 0xa0
+     f28:	d049      	beq.n	fbe <__gnu_unwind_execute+0xca>
+     f2a:	2bb0      	cmp	r3, #176	; 0xb0
+     f2c:	d05c      	beq.n	fe8 <__gnu_unwind_execute+0xf4>
+     f2e:	2bc0      	cmp	r3, #192	; 0xc0
+     f30:	f000 8089 	beq.w	1046 <__gnu_unwind_execute+0x152>
+     f34:	f000 03f8 	and.w	r3, r0, #248	; 0xf8
+     f38:	2bd0      	cmp	r3, #208	; 0xd0
+     f3a:	d10b      	bne.n	f54 <__gnu_unwind_execute+0x60>
+     f3c:	f000 0207 	and.w	r2, r0, #7
+     f40:	3201      	adds	r2, #1
+     f42:	f442 2200 	orr.w	r2, r2, #524288	; 0x80000
+     f46:	4630      	mov	r0, r6
+     f48:	2101      	movs	r1, #1
+     f4a:	2305      	movs	r3, #5
+     f4c:	f7ff fd7e 	bl	a4c <_Unwind_VRS_Pop>
+     f50:	2800      	cmp	r0, #0
+     f52:	d0d6      	beq.n	f02 <__gnu_unwind_execute+0xe>
+     f54:	2009      	movs	r0, #9
+     f56:	b005      	add	sp, #20
+     f58:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+     f5c:	f10d 090c 	add.w	r9, sp, #12
+     f60:	460b      	mov	r3, r1
+     f62:	0087      	lsls	r7, r0, #2
+     f64:	f8cd 9000 	str.w	r9, [sp]
+     f68:	4630      	mov	r0, r6
+     f6a:	220d      	movs	r2, #13
+     f6c:	f7ff fb76 	bl	65c <_Unwind_VRS_Get>
+     f70:	b2ff      	uxtb	r7, r7
+     f72:	9b03      	ldr	r3, [sp, #12]
+     f74:	3704      	adds	r7, #4
+     f76:	0660      	lsls	r0, r4, #25
+     f78:	f04f 0100 	mov.w	r1, #0
+     f7c:	bf4c      	ite	mi
+     f7e:	1bdf      	submi	r7, r3, r7
+     f80:	18ff      	addpl	r7, r7, r3
+     f82:	f8cd 9000 	str.w	r9, [sp]
+     f86:	460b      	mov	r3, r1
+     f88:	4630      	mov	r0, r6
+     f8a:	220d      	movs	r2, #13
+     f8c:	9703      	str	r7, [sp, #12]
+     f8e:	f7ff fb8d 	bl	6ac <_Unwind_VRS_Set>
+     f92:	e7b6      	b.n	f02 <__gnu_unwind_execute+0xe>
+     f94:	f000 030d 	and.w	r3, r0, #13
+     f98:	2b0d      	cmp	r3, #13
+     f9a:	d0db      	beq.n	f54 <__gnu_unwind_execute+0x60>
+     f9c:	af03      	add	r7, sp, #12
+     f9e:	2100      	movs	r1, #0
+     fa0:	f000 020f 	and.w	r2, r0, #15
+     fa4:	460b      	mov	r3, r1
+     fa6:	9700      	str	r7, [sp, #0]
+     fa8:	4630      	mov	r0, r6
+     faa:	f7ff fb57 	bl	65c <_Unwind_VRS_Get>
+     fae:	2100      	movs	r1, #0
+     fb0:	9700      	str	r7, [sp, #0]
+     fb2:	460b      	mov	r3, r1
+     fb4:	4630      	mov	r0, r6
+     fb6:	220d      	movs	r2, #13
+     fb8:	f7ff fb78 	bl	6ac <_Unwind_VRS_Set>
+     fbc:	e7a1      	b.n	f02 <__gnu_unwind_execute+0xe>
+     fbe:	43c3      	mvns	r3, r0
+     fc0:	f44f 627f 	mov.w	r2, #4080	; 0xff0
+     fc4:	f003 0307 	and.w	r3, r3, #7
+     fc8:	411a      	asrs	r2, r3
+     fca:	0701      	lsls	r1, r0, #28
+     fcc:	f402 627f 	and.w	r2, r2, #4080	; 0xff0
+     fd0:	f04f 0100 	mov.w	r1, #0
+     fd4:	bf48      	it	mi
+     fd6:	f442 4280 	orrmi.w	r2, r2, #16384	; 0x4000
+     fda:	460b      	mov	r3, r1
+     fdc:	4630      	mov	r0, r6
+     fde:	f7ff fd35 	bl	a4c <_Unwind_VRS_Pop>
+     fe2:	2800      	cmp	r0, #0
+     fe4:	d1b6      	bne.n	f54 <__gnu_unwind_execute+0x60>
+     fe6:	e78c      	b.n	f02 <__gnu_unwind_execute+0xe>
+     fe8:	28b1      	cmp	r0, #177	; 0xb1
+     fea:	d04c      	beq.n	1086 <__gnu_unwind_execute+0x192>
+     fec:	28b2      	cmp	r0, #178	; 0xb2
+     fee:	d05d      	beq.n	10ac <__gnu_unwind_execute+0x1b8>
+     ff0:	28b3      	cmp	r0, #179	; 0xb3
+     ff2:	f000 808a 	beq.w	110a <__gnu_unwind_execute+0x216>
+     ff6:	f000 03fc 	and.w	r3, r0, #252	; 0xfc
+     ffa:	2bb4      	cmp	r3, #180	; 0xb4
+     ffc:	d0aa      	beq.n	f54 <__gnu_unwind_execute+0x60>
+     ffe:	f000 0207 	and.w	r2, r0, #7
+    1002:	3201      	adds	r2, #1
+    1004:	2101      	movs	r1, #1
+    1006:	f442 2200 	orr.w	r2, r2, #524288	; 0x80000
+    100a:	460b      	mov	r3, r1
+    100c:	4630      	mov	r0, r6
+    100e:	f7ff fd1d 	bl	a4c <_Unwind_VRS_Pop>
+    1012:	2800      	cmp	r0, #0
+    1014:	d19e      	bne.n	f54 <__gnu_unwind_execute+0x60>
+    1016:	e774      	b.n	f02 <__gnu_unwind_execute+0xe>
+    1018:	4628      	mov	r0, r5
+    101a:	f7ff ff3f 	bl	e9c <next_unwind_byte>
+    101e:	0224      	lsls	r4, r4, #8
+    1020:	4320      	orrs	r0, r4
+    1022:	f5b0 4f00 	cmp.w	r0, #32768	; 0x8000
+    1026:	d095      	beq.n	f54 <__gnu_unwind_execute+0x60>
+    1028:	0104      	lsls	r4, r0, #4
+    102a:	2100      	movs	r1, #0
+    102c:	b2a2      	uxth	r2, r4
+    102e:	460b      	mov	r3, r1
+    1030:	4630      	mov	r0, r6
+    1032:	f7ff fd0b 	bl	a4c <_Unwind_VRS_Pop>
+    1036:	2800      	cmp	r0, #0
+    1038:	d18c      	bne.n	f54 <__gnu_unwind_execute+0x60>
+    103a:	f414 4f00 	tst.w	r4, #32768	; 0x8000
+    103e:	bf18      	it	ne
+    1040:	f04f 0801 	movne.w	r8, #1
+    1044:	e75d      	b.n	f02 <__gnu_unwind_execute+0xe>
+    1046:	28c6      	cmp	r0, #198	; 0xc6
+    1048:	d072      	beq.n	1130 <__gnu_unwind_execute+0x23c>
+    104a:	28c7      	cmp	r0, #199	; 0xc7
+    104c:	d07a      	beq.n	1144 <__gnu_unwind_execute+0x250>
+    104e:	f000 03f8 	and.w	r3, r0, #248	; 0xf8
+    1052:	2bc0      	cmp	r3, #192	; 0xc0
+    1054:	f000 8089 	beq.w	116a <__gnu_unwind_execute+0x276>
+    1058:	28c8      	cmp	r0, #200	; 0xc8
+    105a:	f000 80a5 	beq.w	11a8 <__gnu_unwind_execute+0x2b4>
+    105e:	28c9      	cmp	r0, #201	; 0xc9
+    1060:	f47f af78 	bne.w	f54 <__gnu_unwind_execute+0x60>
+    1064:	4628      	mov	r0, r5
+    1066:	f7ff ff19 	bl	e9c <next_unwind_byte>
+    106a:	f000 020f 	and.w	r2, r0, #15
+    106e:	3201      	adds	r2, #1
+    1070:	f000 00f0 	and.w	r0, r0, #240	; 0xf0
+    1074:	ea42 3200 	orr.w	r2, r2, r0, lsl #12
+    1078:	e765      	b.n	f46 <__gnu_unwind_execute+0x52>
+    107a:	f1b8 0f00 	cmp.w	r8, #0
+    107e:	f000 8082 	beq.w	1186 <__gnu_unwind_execute+0x292>
+    1082:	2000      	movs	r0, #0
+    1084:	e767      	b.n	f56 <__gnu_unwind_execute+0x62>
+    1086:	4628      	mov	r0, r5
+    1088:	f7ff ff08 	bl	e9c <next_unwind_byte>
+    108c:	4602      	mov	r2, r0
+    108e:	2800      	cmp	r0, #0
+    1090:	f43f af60 	beq.w	f54 <__gnu_unwind_execute+0x60>
+    1094:	f010 01f0 	ands.w	r1, r0, #240	; 0xf0
+    1098:	f47f af5c 	bne.w	f54 <__gnu_unwind_execute+0x60>
+    109c:	4630      	mov	r0, r6
+    109e:	460b      	mov	r3, r1
+    10a0:	f7ff fcd4 	bl	a4c <_Unwind_VRS_Pop>
+    10a4:	2800      	cmp	r0, #0
+    10a6:	f47f af55 	bne.w	f54 <__gnu_unwind_execute+0x60>
+    10aa:	e72a      	b.n	f02 <__gnu_unwind_execute+0xe>
+    10ac:	2100      	movs	r1, #0
+    10ae:	f10d 090c 	add.w	r9, sp, #12
+    10b2:	220d      	movs	r2, #13
+    10b4:	460b      	mov	r3, r1
+    10b6:	f8cd 9000 	str.w	r9, [sp]
+    10ba:	4630      	mov	r0, r6
+    10bc:	f7ff face 	bl	65c <_Unwind_VRS_Get>
+    10c0:	4628      	mov	r0, r5
+    10c2:	f7ff feeb 	bl	e9c <next_unwind_byte>
+    10c6:	0602      	lsls	r2, r0, #24
+    10c8:	f04f 0402 	mov.w	r4, #2
+    10cc:	d50c      	bpl.n	10e8 <__gnu_unwind_execute+0x1f4>
+    10ce:	9b03      	ldr	r3, [sp, #12]
+    10d0:	f000 007f 	and.w	r0, r0, #127	; 0x7f
+    10d4:	40a0      	lsls	r0, r4
+    10d6:	4403      	add	r3, r0
+    10d8:	4628      	mov	r0, r5
+    10da:	9303      	str	r3, [sp, #12]
+    10dc:	f7ff fede 	bl	e9c <next_unwind_byte>
+    10e0:	0603      	lsls	r3, r0, #24
+    10e2:	f104 0407 	add.w	r4, r4, #7
+    10e6:	d4f2      	bmi.n	10ce <__gnu_unwind_execute+0x1da>
+    10e8:	9b03      	ldr	r3, [sp, #12]
+    10ea:	f000 007f 	and.w	r0, r0, #127	; 0x7f
+    10ee:	40a0      	lsls	r0, r4
+    10f0:	f503 7301 	add.w	r3, r3, #516	; 0x204
+    10f4:	2100      	movs	r1, #0
+    10f6:	181c      	adds	r4, r3, r0
+    10f8:	f8cd 9000 	str.w	r9, [sp]
+    10fc:	460b      	mov	r3, r1
+    10fe:	4630      	mov	r0, r6
+    1100:	220d      	movs	r2, #13
+    1102:	9403      	str	r4, [sp, #12]
+    1104:	f7ff fad2 	bl	6ac <_Unwind_VRS_Set>
+    1108:	e6fb      	b.n	f02 <__gnu_unwind_execute+0xe>
+    110a:	4628      	mov	r0, r5
+    110c:	f7ff fec6 	bl	e9c <next_unwind_byte>
+    1110:	f000 020f 	and.w	r2, r0, #15
+    1114:	3201      	adds	r2, #1
+    1116:	f000 00f0 	and.w	r0, r0, #240	; 0xf0
+    111a:	2101      	movs	r1, #1
+    111c:	ea42 3200 	orr.w	r2, r2, r0, lsl #12
+    1120:	460b      	mov	r3, r1
+    1122:	4630      	mov	r0, r6
+    1124:	f7ff fc92 	bl	a4c <_Unwind_VRS_Pop>
+    1128:	2800      	cmp	r0, #0
+    112a:	f47f af13 	bne.w	f54 <__gnu_unwind_execute+0x60>
+    112e:	e6e8      	b.n	f02 <__gnu_unwind_execute+0xe>
+    1130:	4628      	mov	r0, r5
+    1132:	f7ff feb3 	bl	e9c <next_unwind_byte>
+    1136:	f000 020f 	and.w	r2, r0, #15
+    113a:	3201      	adds	r2, #1
+    113c:	f000 00f0 	and.w	r0, r0, #240	; 0xf0
+    1140:	2103      	movs	r1, #3
+    1142:	e7eb      	b.n	111c <__gnu_unwind_execute+0x228>
+    1144:	4628      	mov	r0, r5
+    1146:	f7ff fea9 	bl	e9c <next_unwind_byte>
+    114a:	4602      	mov	r2, r0
+    114c:	2800      	cmp	r0, #0
+    114e:	f43f af01 	beq.w	f54 <__gnu_unwind_execute+0x60>
+    1152:	f010 03f0 	ands.w	r3, r0, #240	; 0xf0
+    1156:	f47f aefd 	bne.w	f54 <__gnu_unwind_execute+0x60>
+    115a:	4630      	mov	r0, r6
+    115c:	2104      	movs	r1, #4
+    115e:	f7ff fc75 	bl	a4c <_Unwind_VRS_Pop>
+    1162:	2800      	cmp	r0, #0
+    1164:	f47f aef6 	bne.w	f54 <__gnu_unwind_execute+0x60>
+    1168:	e6cb      	b.n	f02 <__gnu_unwind_execute+0xe>
+    116a:	f000 020f 	and.w	r2, r0, #15
+    116e:	3201      	adds	r2, #1
+    1170:	2103      	movs	r1, #3
+    1172:	f442 2220 	orr.w	r2, r2, #655360	; 0xa0000
+    1176:	460b      	mov	r3, r1
+    1178:	4630      	mov	r0, r6
+    117a:	f7ff fc67 	bl	a4c <_Unwind_VRS_Pop>
+    117e:	2800      	cmp	r0, #0
+    1180:	f47f aee8 	bne.w	f54 <__gnu_unwind_execute+0x60>
+    1184:	e6bd      	b.n	f02 <__gnu_unwind_execute+0xe>
+    1186:	ac03      	add	r4, sp, #12
+    1188:	4641      	mov	r1, r8
+    118a:	220e      	movs	r2, #14
+    118c:	4643      	mov	r3, r8
+    118e:	9400      	str	r4, [sp, #0]
+    1190:	4630      	mov	r0, r6
+    1192:	f7ff fa63 	bl	65c <_Unwind_VRS_Get>
+    1196:	9400      	str	r4, [sp, #0]
+    1198:	4630      	mov	r0, r6
+    119a:	4641      	mov	r1, r8
+    119c:	220f      	movs	r2, #15
+    119e:	4643      	mov	r3, r8
+    11a0:	f7ff fa84 	bl	6ac <_Unwind_VRS_Set>
+    11a4:	4640      	mov	r0, r8
+    11a6:	e6d6      	b.n	f56 <__gnu_unwind_execute+0x62>
+    11a8:	4628      	mov	r0, r5
+    11aa:	f7ff fe77 	bl	e9c <next_unwind_byte>
+    11ae:	f000 02f0 	and.w	r2, r0, #240	; 0xf0
+    11b2:	f000 030f 	and.w	r3, r0, #15
+    11b6:	3210      	adds	r2, #16
+    11b8:	3301      	adds	r3, #1
+    11ba:	ea43 3202 	orr.w	r2, r3, r2, lsl #12
+    11be:	e6c2      	b.n	f46 <__gnu_unwind_execute+0x52>
+
+000011c0 <__gnu_unwind_frame>:
+    11c0:	b510      	push	{r4, lr}
+    11c2:	6cc3      	ldr	r3, [r0, #76]	; 0x4c
+    11c4:	b084      	sub	sp, #16
+    11c6:	2003      	movs	r0, #3
+    11c8:	685a      	ldr	r2, [r3, #4]
+    11ca:	f88d 000c 	strb.w	r0, [sp, #12]
+    11ce:	79dc      	ldrb	r4, [r3, #7]
+    11d0:	0212      	lsls	r2, r2, #8
+    11d2:	3308      	adds	r3, #8
+    11d4:	4608      	mov	r0, r1
+    11d6:	a901      	add	r1, sp, #4
+    11d8:	9201      	str	r2, [sp, #4]
+    11da:	f88d 400d 	strb.w	r4, [sp, #13]
+    11de:	9302      	str	r3, [sp, #8]
+    11e0:	f7ff fe88 	bl	ef4 <__gnu_unwind_execute>
+    11e4:	b004      	add	sp, #16
+    11e6:	bd10      	pop	{r4, pc}
+
+000011e8 <_Unwind_GetRegionStart>:
+    11e8:	b508      	push	{r3, lr}
+    11ea:	f7ff fe81 	bl	ef0 <unwind_UCB_from_context>
+    11ee:	6c80      	ldr	r0, [r0, #72]	; 0x48
+    11f0:	bd08      	pop	{r3, pc}
+    11f2:	bf00      	nop
+
+000011f4 <_Unwind_GetLanguageSpecificData>:
+    11f4:	b508      	push	{r3, lr}
+    11f6:	f7ff fe7b 	bl	ef0 <unwind_UCB_from_context>
+    11fa:	6cc3      	ldr	r3, [r0, #76]	; 0x4c
+    11fc:	79d8      	ldrb	r0, [r3, #7]
+    11fe:	eb03 0080 	add.w	r0, r3, r0, lsl #2
+    1202:	3008      	adds	r0, #8
+    1204:	bd08      	pop	{r3, pc}
+    1206:	bf00      	nop
+
+00001208 <_Unwind_GetDataRelBase>:
+    1208:	b508      	push	{r3, lr}
+    120a:	f000 f805 	bl	1218 <abort>
+    120e:	bf00      	nop
+
+00001210 <_Unwind_GetTextRelBase>:
+    1210:	b508      	push	{r3, lr}
+    1212:	f000 f801 	bl	1218 <abort>
+    1216:	bf00      	nop
+
+00001218 <abort>:
+    1218:	b508      	push	{r3, lr}
+    121a:	2006      	movs	r0, #6
+    121c:	f000 f8a6 	bl	136c <raise>
+    1220:	2001      	movs	r0, #1
+    1222:	f000 f8d1 	bl	13c8 <_exit>
+    1226:	bf00      	nop
+
+00001228 <memcpy>:
+    1228:	4684      	mov	r12, r0
+    122a:	ea41 0300 	orr.w	r3, r1, r0
+    122e:	f013 0303 	ands.w	r3, r3, #3
+    1232:	d149      	bne.n	12c8 <memcpy+0xa0>
+    1234:	3a40      	subs	r2, #64	; 0x40
+    1236:	d323      	bcc.n	1280 <memcpy+0x58>
+    1238:	680b      	ldr	r3, [r1, #0]
+    123a:	6003      	str	r3, [r0, #0]
+    123c:	684b      	ldr	r3, [r1, #4]
+    123e:	6043      	str	r3, [r0, #4]
+    1240:	688b      	ldr	r3, [r1, #8]
+    1242:	6083      	str	r3, [r0, #8]
+    1244:	68cb      	ldr	r3, [r1, #12]
+    1246:	60c3      	str	r3, [r0, #12]
+    1248:	690b      	ldr	r3, [r1, #16]
+    124a:	6103      	str	r3, [r0, #16]
+    124c:	694b      	ldr	r3, [r1, #20]
+    124e:	6143      	str	r3, [r0, #20]
+    1250:	698b      	ldr	r3, [r1, #24]
+    1252:	6183      	str	r3, [r0, #24]
+    1254:	69cb      	ldr	r3, [r1, #28]
+    1256:	61c3      	str	r3, [r0, #28]
+    1258:	6a0b      	ldr	r3, [r1, #32]
+    125a:	6203      	str	r3, [r0, #32]
+    125c:	6a4b      	ldr	r3, [r1, #36]	; 0x24
+    125e:	6243      	str	r3, [r0, #36]	; 0x24
+    1260:	6a8b      	ldr	r3, [r1, #40]	; 0x28
+    1262:	6283      	str	r3, [r0, #40]	; 0x28
+    1264:	6acb      	ldr	r3, [r1, #44]	; 0x2c
+    1266:	62c3      	str	r3, [r0, #44]	; 0x2c
+    1268:	6b0b      	ldr	r3, [r1, #48]	; 0x30
+    126a:	6303      	str	r3, [r0, #48]	; 0x30
+    126c:	6b4b      	ldr	r3, [r1, #52]	; 0x34
+    126e:	6343      	str	r3, [r0, #52]	; 0x34
+    1270:	6b8b      	ldr	r3, [r1, #56]	; 0x38
+    1272:	6383      	str	r3, [r0, #56]	; 0x38
+    1274:	6bcb      	ldr	r3, [r1, #60]	; 0x3c
+    1276:	63c3      	str	r3, [r0, #60]	; 0x3c
+    1278:	3040      	adds	r0, #64	; 0x40
+    127a:	3140      	adds	r1, #64	; 0x40
+    127c:	3a40      	subs	r2, #64	; 0x40
+    127e:	d2db      	bcs.n	1238 <memcpy+0x10>
+    1280:	3230      	adds	r2, #48	; 0x30
+    1282:	d30b      	bcc.n	129c <memcpy+0x74>
+    1284:	680b      	ldr	r3, [r1, #0]
+    1286:	6003      	str	r3, [r0, #0]
+    1288:	684b      	ldr	r3, [r1, #4]
+    128a:	6043      	str	r3, [r0, #4]
+    128c:	688b      	ldr	r3, [r1, #8]
+    128e:	6083      	str	r3, [r0, #8]
+    1290:	68cb      	ldr	r3, [r1, #12]
+    1292:	60c3      	str	r3, [r0, #12]
+    1294:	3010      	adds	r0, #16
+    1296:	3110      	adds	r1, #16
+    1298:	3a10      	subs	r2, #16
+    129a:	d2f3      	bcs.n	1284 <memcpy+0x5c>
+    129c:	320c      	adds	r2, #12
+    129e:	d305      	bcc.n	12ac <memcpy+0x84>
+    12a0:	f851 3b04 	ldr.w	r3, [r1], #4
+    12a4:	f840 3b04 	str.w	r3, [r0], #4
+    12a8:	3a04      	subs	r2, #4
+    12aa:	d2f9      	bcs.n	12a0 <memcpy+0x78>
+    12ac:	3204      	adds	r2, #4
+    12ae:	d008      	beq.n	12c2 <memcpy+0x9a>
+    12b0:	07d2      	lsls	r2, r2, #31
+    12b2:	bf1c      	itt	ne
+    12b4:	f811 3b01 	ldrbne.w	r3, [r1], #1
+    12b8:	f800 3b01 	strbne.w	r3, [r0], #1
+    12bc:	d301      	bcc.n	12c2 <memcpy+0x9a>
+    12be:	880b      	ldrh	r3, [r1, #0]
+    12c0:	8003      	strh	r3, [r0, #0]
+    12c2:	4660      	mov	r0, r12
+    12c4:	4770      	bx	lr
+    12c6:	bf00      	nop
+    12c8:	2a08      	cmp	r2, #8
+    12ca:	d313      	bcc.n	12f4 <memcpy+0xcc>
+    12cc:	078b      	lsls	r3, r1, #30
+    12ce:	d0b1      	beq.n	1234 <memcpy+0xc>
+    12d0:	f010 0303 	ands.w	r3, r0, #3
+    12d4:	d0ae      	beq.n	1234 <memcpy+0xc>
+    12d6:	f1c3 0304 	rsb	r3, r3, #4
+    12da:	1ad2      	subs	r2, r2, r3
+    12dc:	07db      	lsls	r3, r3, #31
+    12de:	bf1c      	itt	ne
+    12e0:	f811 3b01 	ldrbne.w	r3, [r1], #1
+    12e4:	f800 3b01 	strbne.w	r3, [r0], #1
+    12e8:	d3a4      	bcc.n	1234 <memcpy+0xc>
+    12ea:	f831 3b02 	ldrh.w	r3, [r1], #2
+    12ee:	f820 3b02 	strh.w	r3, [r0], #2
+    12f2:	e79f      	b.n	1234 <memcpy+0xc>
+    12f4:	3a04      	subs	r2, #4
+    12f6:	d3d9      	bcc.n	12ac <memcpy+0x84>
+    12f8:	3a01      	subs	r2, #1
+    12fa:	f811 3b01 	ldrb.w	r3, [r1], #1
+    12fe:	f800 3b01 	strb.w	r3, [r0], #1
+    1302:	d2f9      	bcs.n	12f8 <memcpy+0xd0>
+    1304:	780b      	ldrb	r3, [r1, #0]
+    1306:	7003      	strb	r3, [r0, #0]
+    1308:	784b      	ldrb	r3, [r1, #1]
+    130a:	7043      	strb	r3, [r0, #1]
+    130c:	788b      	ldrb	r3, [r1, #2]
+    130e:	7083      	strb	r3, [r0, #2]
+    1310:	4660      	mov	r0, r12
+    1312:	4770      	bx	lr
+
+00001314 <_raise_r>:
+    1314:	291f      	cmp	r1, #31
+    1316:	b538      	push	{r3, r4, r5, lr}
+    1318:	d822      	bhi.n	1360 <_raise_r+0x4c>
+    131a:	f8d0 22dc 	ldr.w	r2, [r0, #732]	; 0x2dc
+    131e:	4605      	mov	r5, r0
+    1320:	460c      	mov	r4, r1
+    1322:	b19a      	cbz	r2, 134c <_raise_r+0x38>
+    1324:	f852 3021 	ldr.w	r3, [r2, r1, lsl #2]
+    1328:	b183      	cbz	r3, 134c <_raise_r+0x38>
+    132a:	2b01      	cmp	r3, #1
+    132c:	d00c      	beq.n	1348 <_raise_r+0x34>
+    132e:	1c59      	adds	r1, r3, #1
+    1330:	d006      	beq.n	1340 <_raise_r+0x2c>
+    1332:	2500      	movs	r5, #0
+    1334:	4620      	mov	r0, r4
+    1336:	f842 5024 	str.w	r5, [r2, r4, lsl #2]
+    133a:	4798      	blx	r3
+    133c:	4628      	mov	r0, r5
+    133e:	bd38      	pop	{r3, r4, r5, pc}
+    1340:	2316      	movs	r3, #22
+    1342:	6003      	str	r3, [r0, #0]
+    1344:	2001      	movs	r0, #1
+    1346:	bd38      	pop	{r3, r4, r5, pc}
+    1348:	2000      	movs	r0, #0
+    134a:	bd38      	pop	{r3, r4, r5, pc}
+    134c:	4628      	mov	r0, r5
+    134e:	f000 f829 	bl	13a4 <_getpid_r>
+    1352:	4622      	mov	r2, r4
+    1354:	4601      	mov	r1, r0
+    1356:	4628      	mov	r0, r5
+    1358:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+    135c:	f000 b80e 	b.w	137c <_kill_r>
+    1360:	2316      	movs	r3, #22
+    1362:	6003      	str	r3, [r0, #0]
+    1364:	f04f 30ff 	mov.w	r0, #4294967295
+    1368:	bd38      	pop	{r3, r4, r5, pc}
+    136a:	bf00      	nop
+
+0000136c <raise>:
+    136c:	4b02      	ldr	r3, [pc, #8]	; (1378 <raise+0xc>)
+    136e:	4601      	mov	r1, r0
+    1370:	6818      	ldr	r0, [r3, #0]
+    1372:	f7ff bfcf 	b.w	1314 <_raise_r>
+    1376:	bf00      	nop
+    1378:	100004f0 	.word	0x100004f0
+
+0000137c <_kill_r>:
+    137c:	b538      	push	{r3, r4, r5, lr}
+    137e:	4c08      	ldr	r4, [pc, #32]	; (13a0 <_kill_r+0x24>)
+    1380:	2300      	movs	r3, #0
+    1382:	4605      	mov	r5, r0
+    1384:	4608      	mov	r0, r1
+    1386:	4611      	mov	r1, r2
+    1388:	6023      	str	r3, [r4, #0]
+    138a:	f000 f815 	bl	13b8 <_kill>
+    138e:	1c43      	adds	r3, r0, #1
+    1390:	d000      	beq.n	1394 <_kill_r+0x18>
+    1392:	bd38      	pop	{r3, r4, r5, pc}
+    1394:	6823      	ldr	r3, [r4, #0]
+    1396:	2b00      	cmp	r3, #0
+    1398:	d0fb      	beq.n	1392 <_kill_r+0x16>
+    139a:	602b      	str	r3, [r5, #0]
+    139c:	bd38      	pop	{r3, r4, r5, pc}
+    139e:	bf00      	nop
+    13a0:	100004f4 	.word	0x100004f4
+
+000013a4 <_getpid_r>:
+    13a4:	f000 b800 	b.w	13a8 <_getpid>
+
+000013a8 <_getpid>:
+    13a8:	4b02      	ldr	r3, [pc, #8]	; (13b4 <_getpid+0xc>)
+    13aa:	2258      	movs	r2, #88	; 0x58
+    13ac:	601a      	str	r2, [r3, #0]
+    13ae:	f04f 30ff 	mov.w	r0, #4294967295
+    13b2:	4770      	bx	lr
+    13b4:	100004f4 	.word	0x100004f4
+
+000013b8 <_kill>:
+    13b8:	4b02      	ldr	r3, [pc, #8]	; (13c4 <_kill+0xc>)
+    13ba:	2258      	movs	r2, #88	; 0x58
+    13bc:	601a      	str	r2, [r3, #0]
+    13be:	f04f 30ff 	mov.w	r0, #4294967295
+    13c2:	4770      	bx	lr
+    13c4:	100004f4 	.word	0x100004f4
+
+000013c8 <_exit>:
+    13c8:	e7fe      	b.n	13c8 <_exit>
+    13ca:	bf00      	nop
+    13cc:	00000043 	.word	0x00000043

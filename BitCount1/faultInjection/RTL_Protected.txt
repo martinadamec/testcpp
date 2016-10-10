@@ -1,0 +1,213 @@
+BB: -2
+
+----------------------------------------------------------------
+
+BB: 0
+(insn 99 3 73 2 (set (reg:SI 11 fp)
+        (const_int 64 [0x40])) -1
+     (nil))
+(insn 73 99 74 2 (set (reg:SI 11 fp)
+        (minus:SI (reg:SI 11 fp)
+            (const_int 10 [0xa]))) -1
+     (nil))
+(insn 74 73 75 2 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 11 fp)
+            (const_int 54 [0x36]))) -1
+     (nil))
+(insn 75 74 8 2 (set (pc)
+        (if_then_else (ne (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 70)
+            (pc))) -1
+     (nil))
+(insn 8 75 72 (set (reg/v:SI 3 r3 [orig:113 x ] [113])
+        (reg:SI 0 r0 [ x ])) ../algorithms/bitCount.cpp:10 761 {*thumb2_movsi_insn}
+     (nil))
+(insn 72 8 76 2 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 0 r0)
+            (const_int 0 [0]))) -1
+     (nil))
+(insn 76 72 77 2 (cond_exec (eq (reg:CC 100 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 11 fp)
+            (plus:SI (reg:SI 11 fp)
+                (const_int 164 [0xa4])))) -1
+     (nil))
+(insn 77 76 9 2 (cond_exec (ne (reg:CC 100 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 11 fp)
+            (plus:SI (reg:SI 11 fp)
+                (const_int 168 [0xa8])))) -1
+     (nil))
+(jump_insn 9 77 10 (set (pc)
+        (if_then_else (eq (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 31)
+            (pc))) ../algorithms/bitCount.cpp:10 -1
+     (expr_list:REG_UNUSED (reg:CC 100 cc)
+        (int_list:REG_BR_PROB 3900 (nil)))
+ -> 31)
+
+----------------------------------------------------------------
+
+BB: 1
+(insn 78 10 79 3 (set (reg:SI 11 fp)
+        (minus:SI (reg:SI 11 fp)
+            (const_int 170 [0xaa]))) -1
+     (nil))
+(insn 79 78 80 3 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 11 fp)
+            (const_int 52 [0x34]))) -1
+     (nil))
+(insn 80 79 4 3 (set (pc)
+        (if_then_else (ne (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 70)
+            (pc))) -1
+     (nil))
+(insn 4 80 81 (set (reg/v:SI 0 r0 [orig:110 n ] [110])
+        (const_int 0 [0])) ../algorithms/bitCount.cpp:10 761 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 0 [0])
+        (nil)))
+(insn 81 4 15 3 (set (reg:SI 11 fp)
+        (minus:SI (reg:SI 11 fp)
+            (const_int 31 [0x1f]))) -1
+     (nil))
+
+----------------------------------------------------------------
+
+BB: 2
+(insn 82 14 83 4 (set (reg:SI 11 fp)
+        (minus:SI (reg:SI 11 fp)
+            (const_int 13 [0xd]))) -1
+     (nil))
+(insn 83 82 84 4 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 11 fp)
+            (const_int 8 [0x8]))) -1
+     (nil))
+(insn 84 83 13 4 (set (pc)
+        (if_then_else (ne (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 70)
+            (pc))) -1
+     (nil))
+(insn 13 84 16 (set (reg:SI 2 r2 [orig:111 D.4584 ] [111])
+        (plus:SI (reg/v:SI 3 r3 [orig:113 x ] [113])
+            (const_int -1 [0xffffffffffffffff]))) ../algorithms/bitCount.cpp:13 4 {*arm_addsi3}
+     (nil))
+(insn 16 13 12 (parallel [
+            (set (reg:CC_NOOV 100 cc)
+                (compare:CC_NOOV (and:SI (reg/v:SI 3 r3 [orig:113 x ] [113])
+                        (reg:SI 2 r2 [orig:111 D.4584 ] [111]))
+                    (const_int 0 [0])))
+            (set (reg/v:SI 3 r3 [orig:113 x ] [113])
+                (and:SI (reg/v:SI 3 r3 [orig:113 x ] [113])
+                    (reg:SI 2 r2 [orig:111 D.4584 ] [111])))
+        ]) ../algorithms/bitCount.cpp:11 75 {*andsi3_compare0}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:111 D.4584 ] [111])
+        (nil)))
+(insn 12 16 85 (set (reg/v:SI 0 r0 [orig:110 n ] [110])
+        (plus:SI (reg/v:SI 0 r0 [orig:110 n ] [110])
+            (const_int 1 [0x1]))) ../algorithms/bitCount.cpp:12 4 {*arm_addsi3}
+     (nil))
+(insn 85 12 86 4 (cond_exec (ne (reg:CC 100 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 11 fp)
+            (plus:SI (reg:SI 11 fp)
+                (const_int 13 [0xd])))) -1
+     (nil))
+(insn 86 85 17 4 (cond_exec (eq (reg:CC 100 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 11 fp)
+            (plus:SI (reg:SI 11 fp)
+                (const_int 200 [0xc8])))) -1
+     (nil))
+(jump_insn 17 86 58 (set (pc)
+        (if_then_else (ne (reg:CC_NOOV 100 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 15)
+            (pc))) ../algorithms/bitCount.cpp:11 193 {arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC_NOOV 100 cc)
+        (int_list:REG_BR_PROB 9100 (nil)))
+ -> 15)
+
+----------------------------------------------------------------
+
+BB: 3
+(insn 87 58 88 5 (set (reg:SI 11 fp)
+        (minus:SI (reg:SI 11 fp)
+            (const_int 164 [0xa4]))) -1
+     (nil))
+(insn 88 87 89 5 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 11 fp)
+            (const_int 44 [0x2c]))) -1
+     (nil))
+(insn 89 88 64 5 (set (pc)
+        (if_then_else (ne (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 70)
+            (pc))) -1
+     (nil))
+(insn 64 89 90 (use (reg/i:SI 0 r0)) -1
+     (nil))
+(insn 90 64 91 5 (set (reg:SI 11 fp)
+        (plus:SI (reg:SI 11 fp)
+            (const_int 211 [0xd3]))) -1
+     (nil))
+(insn 91 90 92 5 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 11 fp)
+            (const_int 255 [0xff]))) -1
+     (nil))
+(insn 92 91 65 5 (set (pc)
+        (if_then_else (ne (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 70)
+            (pc))) -1
+     (nil))
+(jump_insn 65 92 60 (simple_return) 790 {*thumb2_return}
+     (nil)
+ -> simple_return)
+
+----------------------------------------------------------------
+
+BB: 4
+(insn 93 30 94 6 (set (reg:SI 11 fp)
+        (minus:SI (reg:SI 11 fp)
+            (const_int 179 [0xb3]))) -1
+     (nil))
+(insn 94 93 95 6 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 11 fp)
+            (const_int 39 [0x27]))) -1
+     (nil))
+(insn 95 94 25 6 (set (pc)
+        (if_then_else (ne (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 70)
+            (pc))) -1
+     (nil))
+(insn 25 95 96 (use (reg/i:SI 0 r0)) ../algorithms/bitCount.cpp:16 -1
+     (nil))
+(insn 96 25 97 6 (set (reg:SI 11 fp)
+        (plus:SI (reg:SI 11 fp)
+            (const_int 216 [0xd8]))) -1
+     (nil))
+(insn 97 96 98 6 (set (reg:CC 100 cc)
+        (compare:CC (reg:SI 11 fp)
+            (const_int 255 [0xff]))) -1
+     (nil))
+(insn 98 97 67 6 (set (pc)
+        (if_then_else (ne (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (label_ref 70)
+            (pc))) -1
+     (nil))
+(jump_insn 67 98 66 (simple_return) ../algorithms/bitCount.cpp:16 790 {*thumb2_return}
+     (nil)
+ -> simple_return)
+
+----------------------------------------------------------------
+
+BB: -1
+
+----------------------------------------------------------------
+

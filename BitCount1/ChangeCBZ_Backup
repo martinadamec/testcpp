@@ -1,0 +1,33 @@
+rtx prev = createCmp(regNr, insn);
+			XEXP(insn, 4) = prev;
+			insn->code = INSN;
+			(insn->u).fld[6].rt_int = -1;
+			(insn->u).fld[7].rt_rtx = NULL;
+			rtx labelToUse = findLabel(labelNr);
+			rtx b;
+			if(cond == EQ){
+				//b = AsmGen::emitBeq(labelToUse, insn, bb, true);
+				b = createBeq(labelToUse, insn);
+			}
+			else{
+				 b=AsmGen::emitBne(labelToUse, insn, bb, true);
+			}
+			JUMP_LABEL(b) = labelToUse;
+			BB_END(bb) = b;
+
+rtx GeneralSigMon::createCmp(unsigned int regNr, rtx cbz){
+	rtx regSig = gen_rtx_REG(SImode, regNr);
+	rtx constInt = gen_rtx_CONST_INT(VOIDmode, 0);
+	rtx cmp = gen_rtx_COMPARE(CCmode, regSig, constInt);
+	rtx regCC = gen_rtx_REG(CCmode, CC_REGNUM);
+	rtx set = gen_rtx_SET(VOIDmode, regCC, cmp);
+	return set;
+}
+
+rtx GeneralSigMon::createBeq(rtx codeLabel, rtx previous){
+	rtx regCC = gen_rtx_REG(CCmode, CC_REGNUM);
+	rtx constInt = gen_rtx_CONST_INT(VOIDmode, 0);
+	rtx eq = gen_rtx_EQ(CCmode,regCC,constInt);
+	rtx insn = emit_jump_insn_after_noloc(gen_arm_cond_branch(codeLabel, eq, regCC), previous);
+	return insn;
+}

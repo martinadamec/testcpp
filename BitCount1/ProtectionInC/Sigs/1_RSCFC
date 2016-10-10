@@ -1,0 +1,9 @@
+// Sigs for RSCFC
+static const char s0 = 0x1a;
+static const char L0 = 0x1;
+static const char s1 = 0x14;
+static const char L1 = 0x2;
+static const char s2 = 0x1a;
+static const char L2 = 0x4;
+static const char s3 = 0x10;
+static const char L3 = 0x8; 

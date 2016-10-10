@@ -1,0 +1,10 @@
+000001c8 <bit_count(long)>:
+     1c8:	4603      	mov	r3, r0
+     1ca:	b130      	cbz	r0, 1da <bit_count(long)+0x12>
+     1cc:	2000      	movs	r0, #0
+     1ce:	1e5a      	subs	r2, r3, #1
+     1d0:	4013      	ands	r3, r2
+     1d2:	f100 0001 	add.w	r0, r0, #1
+     1d6:	d1fa      	bne.n	1ce <bit_count(long)+0x6>
+     1d8:	4770      	bx	lr
+     1da:	4770      	bx	lr

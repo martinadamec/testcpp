@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<visualization>
+<BasicBlock id="0">
+<instr id="1691047328">
+(insn 8 3 9 (set (reg/v:SI 3 r3 [orig:113 x ] [113])
+        (reg:SI 0 r0 [ x ])) ../algorithms/bitCount.cpp:10 761 {*thumb2_movsi_insn}
+     (nil))
+</instr>
+<instr id="1704367552">
+(jump_insn 9 8 10 (parallel [
+            (set (pc)
+                (if_then_else (eq (reg:SI 0 r0 [orig:113 x ] [113])
+                        (const_int 0 [0]))
+                    (label_ref:SI 31)
+                    (pc)))
+            (clobber (reg:CC 100 cc))
+        ]) ../algorithms/bitCount.cpp:10 804 {*thumb2_cbz}
+     (expr_list:REG_UNUSED (reg:CC 100 cc)
+        (int_list:REG_BR_PROB 3900 (nil)))
+ -> 31)
+</instr>
+<edge>1</edge>
+<edge>4</edge>
+</BasicBlock>
+<BasicBlock id="1">
+<instr id="1703190320">
+(insn 4 10 15 (set (reg/v:SI 0 r0 [orig:110 n ] [110])
+        (const_int 0 [0])) ../algorithms/bitCount.cpp:10 761 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 0 [0])
+        (nil)))
+</instr>
+<edge>2</edge>
+</BasicBlock>
+<BasicBlock id="2">
+<instr id="1703190392">
+(insn 13 14 16 (set (reg:SI 2 r2 [orig:111 D.4584 ] [111])
+        (plus:SI (reg/v:SI 3 r3 [orig:113 x ] [113])
+            (const_int -1 [0xffffffffffffffff]))) ../algorithms/bitCount.cpp:13 4 {*arm_addsi3}
+     (nil))
+</instr>
+<instr id="1703190104">
+(insn 16 13 12 (parallel [
+            (set (reg:CC_NOOV 100 cc)
+                (compare:CC_NOOV (and:SI (reg/v:SI 3 r3 [orig:113 x ] [113])
+                        (reg:SI 2 r2 [orig:111 D.4584 ] [111]))
+                    (const_int 0 [0])))
+            (set (reg/v:SI 3 r3 [orig:113 x ] [113])
+                (and:SI (reg/v:SI 3 r3 [orig:113 x ] [113])
+                    (reg:SI 2 r2 [orig:111 D.4584 ] [111])))
+        ]) ../algorithms/bitCount.cpp:11 75 {*andsi3_compare0}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:111 D.4584 ] [111])
+        (nil)))
+</instr>
+<instr id="1691047408">
+(insn 12 16 17 (set (reg/v:SI 0 r0 [orig:110 n ] [110])
+        (plus:SI (reg/v:SI 0 r0 [orig:110 n ] [110])
+            (const_int 1 [0x1]))) ../algorithms/bitCount.cpp:12 4 {*arm_addsi3}
+     (nil))
+</instr>
+<instr id="1704368192">
+(jump_insn 17 12 58 (set (pc)
+        (if_then_else (ne (reg:CC_NOOV 100 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 15)
+            (pc))) ../algorithms/bitCount.cpp:11 193 {arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC_NOOV 100 cc)
+        (int_list:REG_BR_PROB 9100 (nil)))
+ -> 15)
+</instr>
+<edge>2</edge>
+<edge>3</edge>
+</BasicBlock>
+<BasicBlock id="3">
+<instr id="1691047728">
+(insn 64 58 65 (use (reg/i:SI 0 r0)) -1
+     (nil))
+</instr>
+<instr id="1691084912">
+(jump_insn 65 64 60 (simple_return) 790 {*thumb2_return}
+     (nil)
+ -> simple_return)
+</instr>
+<edge>-1</edge>
+</BasicBlock>
+<BasicBlock id="4">
+<instr id="1691047808">
+(insn 25 30 67 (use (reg/i:SI 0 r0)) ../algorithms/bitCount.cpp:16 -1
+     (nil))
+</instr>
+<instr id="1691085272">
+(jump_insn 67 25 66 (simple_return) ../algorithms/bitCount.cpp:16 790 {*thumb2_return}
+     (nil)
+ -> simple_return)
+</instr>
+<edge>-1</edge>
+</BasicBlock>
+</visualization>
